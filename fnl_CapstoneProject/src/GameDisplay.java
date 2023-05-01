@@ -6,14 +6,14 @@ import java.awt.event.*;
 import javax.swing.*;
 
 
-public class Main extends JPanel implements ActionListener {
+public class GameDisplay extends JPanel implements ActionListener {
 	
 	private int time;
 	private int xCoord, yCoord; 
 	
 	
 	
-	public Main () {
+	public GameDisplay () {
 		time = 0;
 		Timer clock = new Timer(30, this);
 		clock.start();
@@ -47,7 +47,7 @@ public class Main extends JPanel implements ActionListener {
 		w.setBounds(500,250,500,500);
 		
 		Container c = w.getContentPane();
-		c.add(new Main());
+		c.add(new GameDisplay());
 		w.setVisible(true);
 		
 		
