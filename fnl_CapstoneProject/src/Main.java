@@ -10,7 +10,7 @@ public class Main extends JPanel implements ActionListener {
 	
 	private int time;
 	private int xCoord, yCoord; 
-	
+	private int height, width;
 	
 	
 	public Main () {
@@ -18,7 +18,7 @@ public class Main extends JPanel implements ActionListener {
 		Timer clock = new Timer(30, this);
 		clock.start();
 		xCoord = 250;
-		yCoord = getHeight();
+		yCoord = 500;
 			
 	}
 	
@@ -44,11 +44,12 @@ public class Main extends JPanel implements ActionListener {
 	
 	public static void main(String[] args) {
 		JFrame w = new JFrame("Trial");
-		w.setBounds(500,250,500,500);
+		w.setBounds(250,100,900,650);
 		
 		Container c = w.getContentPane();
 		c.add(new Main());
 		w.setVisible(true);
+		w.setResizable(false);
 		
 		
 	}
