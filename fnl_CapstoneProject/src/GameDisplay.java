@@ -9,16 +9,18 @@ import javax.swing.*;
 public class GameDisplay extends JPanel implements ActionListener {
 	
 	private int time;
-	private int xCoord, yCoord; 
-	private int height, width;
+	private double xCoord, yCoord; 
+	private int height = 650, width = 900;
+	
+	
 	
 	
 	public GameDisplay () {
 		time = 0;
-		Timer clock = new Timer(30, this);
+		Timer clock = new Timer(100, this);
 		clock.start();
-		xCoord = 250;
-		yCoord = 500;
+		xCoord = 100;
+		yCoord = 625;
 			
 	}
 	
@@ -30,14 +32,17 @@ public class GameDisplay extends JPanel implements ActionListener {
 		super.paintComponent(g);
 		
 		g.setColor(Color.ORANGE);
-		g.fillOval(xCoord, yCoord, 50, 50);
+		g.fillOval((int)xCoord, (int)yCoord, 50, 50);
 		
 	}
 	
 	
 	public void actionPerformed(ActionEvent e) {
 		time++;
-		yCoord--;
+		xCoord++;
+		yCoord  = 0.00428571428*((xCoord-450)*(xCoord-450))+100;
+		
+		System.out.println(xCoord + " "+ yCoord);
 		repaint();
 	}
 	
