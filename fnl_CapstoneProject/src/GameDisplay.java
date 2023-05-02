@@ -12,7 +12,7 @@ public class GameDisplay extends JPanel implements ActionListener {
 	private double xCoord, yCoord; 
 	private int height = 650, width = 900;
 	
-	
+	private Resources gResource, bResource ; 
 	
 	
 	public GameDisplay () {
@@ -21,6 +21,9 @@ public class GameDisplay extends JPanel implements ActionListener {
 		clock.start();
 		xCoord = 100;
 		yCoord = 625;
+		
+		gResource = new GoodResource();
+		bResource = new BadResource();
 			
 	}
 	

@@ -2,7 +2,7 @@ import java.awt.Image;
 
 public class BadResource implements Resources{
 
-	@Override
+	
 	public int returnPoints() {
 		// TODO Auto-generated method stub
 		return 0;
