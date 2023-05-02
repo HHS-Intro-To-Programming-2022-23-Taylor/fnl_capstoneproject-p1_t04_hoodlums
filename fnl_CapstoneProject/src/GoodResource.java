@@ -1,7 +1,17 @@
 import java.awt.Image;
 
 public class GoodResource implements Resources{
-
+	
+	private int points;
+	
+	private double xCoord, yCoord;
+	
+	private Image solar, wind, hydro;
+	
+	public GoodResource() {
+		
+	}
+	
 	@Override
 	public int returnPoints() {
 		// TODO Auto-generated method stub

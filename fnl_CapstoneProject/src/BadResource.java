@@ -1,7 +1,13 @@
 import java.awt.Image;
 
 public class BadResource implements Resources{
-
+	
+	
+	public BadResource() {
+		
+	}
+	
+	
 	
 	public int returnPoints() {
 		// TODO Auto-generated method stub
