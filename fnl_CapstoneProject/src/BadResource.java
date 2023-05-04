@@ -1,4 +1,6 @@
 import java.awt.Image;
+import javax.swing.JButton; 
+import javax.swing.JFrame; 
 
 public class BadResource implements Resources{
 	
@@ -14,20 +16,19 @@ public class BadResource implements Resources{
 		return 0;
 	}
 
-	@Override
-	public double getX() {
+	public int getX() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public double getY() {
+	public int getY() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public double createPath() {
+	public int createPath() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

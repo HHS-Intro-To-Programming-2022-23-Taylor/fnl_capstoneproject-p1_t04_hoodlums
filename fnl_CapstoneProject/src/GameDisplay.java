@@ -22,7 +22,7 @@ public class GameDisplay extends JPanel implements ActionListener {
 		clock.start();
 		xCoord = 100;
 		yCoord = 625;
-//<<<<<<< HEAD
+		
 //		movingObject = new JButton("Click Me");
 //		movingObject.setBackground(Color.GREEN);
 //		c.add(movingObject);
@@ -31,12 +31,18 @@ public class GameDisplay extends JPanel implements ActionListener {
 		movingObject.setBackground(Color.GREEN);
 		movingObject.setSize(100, 100);
 		movingObject.setLocation(100, 100);
-//=======
+		
 		
 		gResource = new GoodResource();
 		bResource = new BadResource();
 			
-//>>>>>>> ab08d74d601864ef50595a1f8fab714a7161623a
+
+
+		
+		gResource = new GoodResource();
+		bResource = new BadResource();
+		
+
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -73,6 +79,7 @@ public class GameDisplay extends JPanel implements ActionListener {
 		
 		Container c = w.getContentPane();
 		c.add(new GameDisplay());
+		
 		w.setVisible(true);
 		w.setResizable(false);
 		
