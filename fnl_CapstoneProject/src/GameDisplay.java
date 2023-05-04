@@ -12,6 +12,9 @@ public class GameDisplay extends JPanel implements ActionListener {
 	private double xCoord, yCoord; 
 	private int height = 650, width = 900;
 	private JButton movingObject; 
+	private Image oilDrum;
+	private BadResource oil;
+//  private JButton test; 
 	
 	private Resources gResource, bResource ; 
 	
@@ -23,24 +26,22 @@ public class GameDisplay extends JPanel implements ActionListener {
 		xCoord = 100;
 		yCoord = 625;
 		
+		
 //		movingObject = new JButton("Click Me");
 //		movingObject.setBackground(Color.GREEN);
 //		c.add(movingObject);
 		
-		movingObject = new JButton("Click Me");
-		movingObject.setBackground(Color.GREEN);
-		movingObject.setSize(100, 100);
-		movingObject.setLocation(100, 100);
+//		movingObject = new JButton("Click Me");
+//		movingObject.setBackground(Color.GREEN);
+//		movingObject.setSize(100, 100);
+//		movingObject.setLocation(100, 100);
 		
+		oilDrum = (new ImageIcon("oilDrum.png")).getImage();
+	//	oil = new BadResource(30,30,oilDrum);
 		
-		gResource = new GoodResource();
-		bResource = new BadResource();
-			
-
-
-		
-		gResource = new GoodResource();
-		bResource = new BadResource();
+//		gResource = new GoodResource();
+//		bResource = new BadResource();
+	
 		
 
 	}
@@ -50,15 +51,19 @@ public class GameDisplay extends JPanel implements ActionListener {
 		setBackground(Color.WHITE);
 		
 		
-		super.paintComponent(g);
 		
+		super.paintComponent(g);
+		oil.draw(g);
 //		JButton button = new JButton ("Click Me");
 //		button.setSize(100,100);
 		//button.add(button);
 		g.setColor(Color.ORANGE);
 		g.fillOval((int)xCoord, (int)yCoord, 50, 50);
-		add(movingObject);
 		
+		//GoodResource g1 = new GoodResource(); 
+		
+		add(movingObject);
+		//add(test);
 	}
 	
 	

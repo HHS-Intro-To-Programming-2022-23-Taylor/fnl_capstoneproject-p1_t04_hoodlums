@@ -1,49 +1,47 @@
 
 import java.awt.Image;
-
-public class GoodResource implements Resources{
-
 import java.awt.FlowLayout;
 import java.awt.Image;
 import javax.swing.JButton; 
 import javax.swing.JFrame; 
+import java.awt.*; 
+import java.awt.event.*;
+import javax.swing.*;
 
-public class GoodResource extends JFrame implements Resources{
+public class GoodResource extends JFrame implements Resources {
 
 	private int points;
-	
+
 	private double xCoord, yCoord;
-	
-	private Image solar, wind, hydro;
-	
 
-	public GoodResource() {
+	private Image solar, wind, hydro, picture;
+
+//	private JButton test;
+
+
+
+	public GoodResource(int x, int y, Image pic) {
+
 		
-	}
-	
-	@Override
-	public int returnPoints() {
+		picture = pic; 
+		xCoord = x; 
+		yCoord = y; 
+//				super.test = new JButton("touch me");
+//				
+//				//setLayout (new FlowLayout());
+//			
+//				
+//				super.setVisible(true);
+//				super.setLocation(200,200);
+//				super.setSize(100,100);
+//				super.setBackground(Color.BLUE);
+//				super.setDefaultCloseOperation(EXIT_ON_CLOSE);
+				
+				
+				
 
-	JButton test;
-
-	
-	
-	
-	public GoodResource() {
-		
-//		test = new JButton("touch me");
-//		
-//		setLayout (new FlowLayout());
-//		add(test);
-//		
-//		setVisible(true);
-//		setSize(100,100);
-//		setLocation(100,100);
-//		setDefaultCloseOperation(EXIT_ON_CLOSE);
-//		
-	
 	}
-	
+
 	@Override
 	public int returnPoints() { 
 
@@ -81,3 +79,5 @@ public class GoodResource extends JFrame implements Resources{
 	}
 
 }
+
+
