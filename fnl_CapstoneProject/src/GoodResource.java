@@ -32,25 +32,25 @@ public class GoodResource extends JFrame implements Resources{
 	}
 	
 	@Override
-	public int returnPoints() { 
+	public double returnPoints() { 
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int getX() {
+	public double giveX() {
+		
+		return 0;
+	}
+
+	@Override
+	public double giveY() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int getY() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int createPath() {
+	public double createPath() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
