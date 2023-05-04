@@ -24,7 +24,7 @@ public class GameDisplay extends JPanel implements ActionListener {
 		
 		gResource = new GoodResource();
 		bResource = new BadResource();
-			
+		
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -56,6 +56,7 @@ public class GameDisplay extends JPanel implements ActionListener {
 		
 		Container c = w.getContentPane();
 		c.add(new GameDisplay());
+		
 		w.setVisible(true);
 		w.setResizable(false);
 		
