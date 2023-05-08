@@ -6,10 +6,10 @@ import java.awt.event.*;
 import javax.swing.*;
 
 
-public class GameDisplay extends JPanel implements ActionListener {
+public class GameDisplay extends JPanel implements ActionListener, MouseListener {
 	
-	private int time;
-	private double xCoord, yCoord; 
+	
+	private double xCoord, yCoord, clickedX, clickedY; 
 	private int height = 650, width = 900;
 	private JButton movingObject; 
 	private Image oilDrum;
@@ -18,15 +18,23 @@ public class GameDisplay extends JPanel implements ActionListener {
 	
 	private Resources gResource, bResource ; 
 	
+	private boolean clicked;
+	
+	Color color ; 
+	
 	
 	public GameDisplay () {
-		time = 0;
-		Timer clock = new Timer(100, this);
+		
+		Timer clock = new Timer(10, this);
 		clock.start();
+		
 		xCoord = 100;
 		yCoord = 625;
+		clickedX = 0;
+		clickedY = 0;
 		
 		
+
 //		movingObject = new JButton("Click Me");
 //		movingObject.setBackground(Color.GREEN);
 //		c.add(movingObject);
@@ -44,6 +52,12 @@ public class GameDisplay extends JPanel implements ActionListener {
 	
 		
 
+
+		addMouseListener(this);
+		
+		color = (Color.yellow);
+		
+
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -52,6 +66,7 @@ public class GameDisplay extends JPanel implements ActionListener {
 		
 		
 		
+
 		super.paintComponent(g);
 		oil.draw(g);
 //		JButton button = new JButton ("Click Me");
@@ -59,6 +74,10 @@ public class GameDisplay extends JPanel implements ActionListener {
 		//button.add(button);
 		g.setColor(Color.ORANGE);
 		g.fillOval((int)xCoord, (int)yCoord, 50, 50);
+		
+		g.setColor(color);
+		g.fillRect((int)xCoord, (int)yCoord, 100, 100);
+
 		
 		//GoodResource g1 = new GoodResource(); 
 		
@@ -68,12 +87,15 @@ public class GameDisplay extends JPanel implements ActionListener {
 	
 	
 	public void actionPerformed(ActionEvent e) {
-		time++;
+		
 		xCoord++;
 		yCoord  = 0.004*((xCoord-450)*(xCoord-450))+100;
 		//0.00428571428
 		//System.out.println(xCoord + " "+ yCoord);
 		
+
+	//	System.out.println(xCoord + " "+ yCoord);
+
 		repaint();
 	}
 	
@@ -90,6 +112,66 @@ public class GameDisplay extends JPanel implements ActionListener {
 		
 
 		
+		
 	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		clickedX = e.getX();
+		clickedY = e.getY();
+		
+		checkClick();
+	}
+
+	private boolean checkClick() {
+		
+		if (	(clickedX >= xCoord)&&(clickedX <= xCoord+100)&&(clickedY >= yCoord)&&(clickedY <= yCoord+100)	)		
+			color = new Color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+		else 
+			return false;
+		
+		return true;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	public void mousePressed(MouseEvent e) {	
+	}
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		
+	}
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		
+	}
+	@Override
+	public void mouseExited(MouseEvent e) {	
+	}
+
+	
 
 }

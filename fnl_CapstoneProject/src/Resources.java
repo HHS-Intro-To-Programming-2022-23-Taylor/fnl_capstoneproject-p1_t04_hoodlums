@@ -2,11 +2,15 @@ import java.awt.*;
 
 public interface Resources {
 	
-	public int returnPoints();
 
-	public int getX();
-	public int getY();
-	public int createPath();
+
+
+
+
+	public double returnPoints();
+	public double giveX();
+	public double giveY();
+	public double createPath();
 
 	public Image returnPic();
 

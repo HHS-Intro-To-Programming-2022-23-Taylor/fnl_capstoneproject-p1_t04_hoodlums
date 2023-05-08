@@ -25,24 +25,33 @@ public class BadResource implements Resources{
 
 
 
-	public int returnPoints() {
+
+	
+
+	
+	public double returnPoints() {
+
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	public int getX() {
+
+
+	@Override
+	public double giveX() {
+
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int getY() {
+	public double giveY() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int createPath() {
+	public double createPath() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
