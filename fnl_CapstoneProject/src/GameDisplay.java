@@ -40,12 +40,12 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	
 	public void paintComponent(Graphics g) {
 		
-		setBackground(Color.WHITE);
+		setBackground(color);
 		
 		
 		super.paintComponent(g);
 		
-		g.setColor(color);
+		g.setColor(Color.black);
 		g.fillRect((int)xCoord, (int)yCoord, 100, 100);
 		
 	}
@@ -80,12 +80,12 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		clickedX = e.getX();
 		clickedY = e.getY();
 		
-		checkClick();
+		checkClick(gResource);
 	}
 
-	private boolean checkClick() {
+	private boolean checkClick(Resources x) {
 		
-		if (	(clickedX >= xCoord)&&(clickedX <= xCoord+100)&&(clickedY >= yCoord)&&(clickedY <= yCoord+100)	)		
+		if (	(clickedX >= x.giveX())&&(clickedX <= x.giveX()+100)&&(clickedY >= x.giveY())&&(clickedY <= x.giveY()+100)	)		
 			color = new Color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
 		else 
 			return false;
