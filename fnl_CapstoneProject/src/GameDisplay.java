@@ -13,14 +13,16 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	private int height = 650, width = 900;
 	private JButton movingObject; 
 	private Image oilDrum;
-	private BadResource oil;
+	//private BadResource oil;
 //  private JButton test; 
 	
-	private Resources gResource, bResource ; 
+	//private Resources gResource, bResource ; 
 	
 	private boolean clicked;
 	
 	Color color ; 
+	
+
 	
 	
 	public GameDisplay () {
@@ -44,12 +46,14 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 //		movingObject.setSize(100, 100);
 //		movingObject.setLocation(100, 100);
 		
-		oilDrum = (new ImageIcon("oilDrum.png")).getImage();
-	//	oil = new BadResource(30,30,oilDrum);
 		
-//		gResource = new GoodResource();
-//		bResource = new BadResource();
-	
+		oilDrum = (new ImageIcon("oilDrum1.png")).getImage();
+		BadResource oil = new BadResource(30,30,oilDrum);
+		
+		//gResource = new GoodResource();
+		BadResource bResource = new BadResource();
+		
+		
 		
 
 
@@ -63,12 +67,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	public void paintComponent(Graphics g) {
 		
 		setBackground(Color.WHITE);
-		
-		
-		
-
 		super.paintComponent(g);
-		oil.draw(g);
 //		JButton button = new JButton ("Click Me");
 //		button.setSize(100,100);
 		//button.add(button);
@@ -81,8 +80,12 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		//GoodResource g1 = new GoodResource(); 
 		
-		add(movingObject);
+		//add(movingObject);
 		//add(test);
+		
+		Graphics2D g2 = (Graphics2D)g;
+		g2.drawImage(bResource.returnImage(), (int)xCoord,(int)yCoord, this);
+		
 	}
 	
 	

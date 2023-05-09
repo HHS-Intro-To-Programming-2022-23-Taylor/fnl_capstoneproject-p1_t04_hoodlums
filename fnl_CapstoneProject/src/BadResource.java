@@ -1,15 +1,23 @@
 import java.awt.Graphics;
 import java.awt.Image;
-import javax.swing.JButton; 
-import javax.swing.JFrame; 
+import java.awt.FlowLayout;
+import java.awt.Image;
+import java.awt.*; 
+import java.awt.event.*;
+import javax.swing.*;
+import java.awt.Image;
+import java.awt.Graphics;
 
-public class BadResource implements Resources{
+public class BadResource extends JPanel implements Resources{
 	private int points;
 
 	private double xCoord, yCoord;
 
-	private Image solar, wind, hydro, picturep;
+	private Image solar, wind, hydro, picture;
 	
+	private Image oilDrum;
+	
+
 
 	
 	
@@ -20,13 +28,23 @@ public class BadResource implements Resources{
 		picture = pic;
 		xCoord = x;
 		yCoord = y; 
+		oilDrum = (new ImageIcon("oilDrum1.png")).getImage();
+
 	}
 	
-
-
-
-
+	public BadResource () {
+		
+	}
+//	public void draw(Graphics g) {
+//		
+//		g.drawImage(g, picture);
+//		
+//	}
 	
+	public Image returnImage() {
+		
+		return oilDrum; 
+	}
 
 	
 	public double returnPoints() {
@@ -62,7 +80,4 @@ public class BadResource implements Resources{
 		return null;
 	}
 
-	public void draw(Graphics g) {
-	
-	}
 }
