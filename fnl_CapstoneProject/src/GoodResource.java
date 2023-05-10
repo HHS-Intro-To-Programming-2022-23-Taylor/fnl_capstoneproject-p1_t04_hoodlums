@@ -1,7 +1,12 @@
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.FlowLayout;
 import java.awt.Image;
 import javax.swing.JButton; 
 import javax.swing.JFrame; 
+import java.awt.*; 
+import java.awt.event.*;
+import javax.swing.*;
 
 public class GoodResource extends JFrame implements Resources{
 	
@@ -16,27 +21,62 @@ public class GoodResource extends JFrame implements Resources{
 	
 	
 	public GoodResource() {
+
+	private int points;
+
+	private double xCoord, yCoord;
+
+	private Image solar, wind, hydro, picture;
+
+//	private JButton test;
+
+
+
+	public GoodResource(int x, int y, Image pic) {
+
+
 		
-//		test = new JButton("touch me");
-//		
-//		setLayout (new FlowLayout());
-//		add(test);
-//		
-//		setVisible(true);
-//		setSize(100,100);
-//		setLocation(100,100);
-//		setDefaultCloseOperation(EXIT_ON_CLOSE);
-//		
-	
-	}
-	
-	@Override
-	public void changePoints() { 
-		
-		points+=10;
+		picture = pic; 
+		xCoord = x; 
+		yCoord = y; 
+//				super.test = new JButton("touch me");
+//				
+//				//setLayout (new FlowLayout());
+//			
+//				
+//				super.setVisible(true);
+//				super.setLocation(200,200);
+//				super.setSize(100,100);
+//				super.setBackground(Color.BLUE);
+//				super.setDefaultCloseOperation(EXIT_ON_CLOSE);
+				
+				
+				
+
 	}
 
 	@Override
+
+	public void changePoints() { 
+		
+		points+=10;
+
+
+
+
+	public double returnPoints() { 
+
+		// TODO Auto-generated method stub
+		return 0;
+
+	}
+
+	@Override
+
+
+
+
+
 	public double giveX() {
 		
 		return xCoord;
@@ -44,8 +84,28 @@ public class GoodResource extends JFrame implements Resources{
 
 	@Override
 	public double giveY() {
+
 		// TODO Auto-generated method stub
 		return yCoord;
+	}
+	
+	@Override
+
+
+	public int getY() {
+
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+
+	
+
+	public double createPath() {
+
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 
@@ -80,3 +140,5 @@ public class GoodResource extends JFrame implements Resources{
 	}
 
 }
+
+
