@@ -13,11 +13,13 @@ public class BadResource extends JPanel implements Resources{
 
 
 
+
 	private Image solar, wind, hydro, picture;
 	
 
 
 	
+
 		
 	static int points;
 	
@@ -37,14 +39,6 @@ public class BadResource extends JPanel implements Resources{
 
 	}
 	
-	public BadResource () {
-		
-	}
-//	public void draw(Graphics g) {
-//		
-//		g.drawImage(g, picture);
-//		
-//	}
 	
 	public Image returnPic() {
 		
@@ -60,27 +54,11 @@ public class BadResource extends JPanel implements Resources{
 		
 	}
 
-	public double returnPoints() {
-
-		// TODO Auto-generated method stub
-		return 0;
-
-
-
-	}
-	
 
 	@Override
 	public double giveX() {
 
-		
 		return xCoord;
-
-
-
-		// TODO Auto-generated method stub
-
-
 	}
 
 	@Override
@@ -122,6 +100,7 @@ public class BadResource extends JPanel implements Resources{
 		vertex = (int)((Math.random()*200)+350); 
 	}
 
+
 	@Override
 	public double createPath() {
 		// TODO Auto-generated method stub
@@ -133,5 +112,6 @@ public class BadResource extends JPanel implements Resources{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }

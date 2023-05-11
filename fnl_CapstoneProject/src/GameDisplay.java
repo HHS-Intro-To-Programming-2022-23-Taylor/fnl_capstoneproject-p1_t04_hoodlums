@@ -109,11 +109,10 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	private boolean checkClick(Resources x) {
 		
 		if (	(clickedX >= x.giveX())&&(clickedX <= x.giveX()+100)&&(clickedY >= x.giveY())&&(clickedY <= x.giveY()+100)	)		
-			color = new Color((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
+			return true;
 		else 
 			return false;
 		
-		return true;
 	}
 	
 	

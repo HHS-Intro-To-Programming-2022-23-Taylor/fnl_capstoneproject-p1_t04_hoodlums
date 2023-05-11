@@ -10,26 +10,13 @@ import javax.swing.*;
 
 public class GoodResource extends JFrame implements Resources{
 	
-	//static int points;
+	static int points;
 	
 	private double xCoord, yCoord, slope;
 	
 	private int vertex;
 
-	
-	
-	
-	public GoodResource() {
-
-	}
-
-	private int points;
-
-
 	private Image solar, wind, hydro, picture;
-
-//	private JButton test;
-
 
 
 	public GoodResource(int x, int y) {
@@ -47,10 +34,12 @@ public class GoodResource extends JFrame implements Resources{
 		
 	}
 
+
 	
 
 
 	
+
 
 	@Override
 

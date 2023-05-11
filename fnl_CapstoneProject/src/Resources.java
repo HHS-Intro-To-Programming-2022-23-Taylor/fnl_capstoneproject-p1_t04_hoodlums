@@ -15,12 +15,16 @@ public interface Resources {
 
 
 	public double returnPoints();
-	public double giveX();
-	public double giveY();
 	public double createPath();
 
 
 	public Image returnPic();
+
 	public Image returnImage();
+
+
+	public double giveX();
+	public double giveY();
+	
 
 }
