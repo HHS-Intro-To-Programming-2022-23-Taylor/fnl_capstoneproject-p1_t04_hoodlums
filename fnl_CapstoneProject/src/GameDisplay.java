@@ -35,7 +35,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		
 		//gResource = new GoodResource();
-		BadResource bResource = new BadResource();
+		 bResource = new BadResource((int)xCoord,(int)yCoord);
 		
 		
 		

@@ -2,8 +2,6 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.FlowLayout;
 import java.awt.Image;
-import javax.swing.JButton; 
-import javax.swing.JFrame; 
 import java.awt.*; 
 import java.awt.event.*;
 import javax.swing.*;
@@ -31,7 +29,27 @@ public class GoodResource extends JFrame implements Resources{
 	public void changePoints() { 
 		
 		points+=10;
-		
+	
+		solar = (new ImageIcon("solar.png")).getImage();
+		wind = (new ImageIcon("wind.png")).getImage();
+		hydro = (new ImageIcon("hydro.png")).getImage();
+	}
+	
+	int max = 16;
+	int min = 1; 
+	int r = (int) ((Math.random() * (max - min)) + min);
+	
+	public Image returnPic() {
+		if (r>10) {
+			return solar;
+		}
+		else if (r>=6 ) {
+			return gas;
+		}
+			
+		else {
+		return oilDrum;
+		}
 	}
 
 
@@ -55,12 +73,7 @@ public class GoodResource extends JFrame implements Resources{
 	}
 	
 
-	@Override
-	public Image returnPic() {
-		
-		return null;
-	}
-
+	
 	@Override
 	public double giveSlope() {
 		

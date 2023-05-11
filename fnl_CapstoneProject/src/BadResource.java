@@ -7,6 +7,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.awt.Image;
 import java.awt.Graphics;
+import java.util.Random;
 
 public class BadResource extends JPanel implements Resources{
 
@@ -36,13 +37,26 @@ public class BadResource extends JPanel implements Resources{
 		xCoord = x;
 		yCoord = y; 
 		oilDrum = (new ImageIcon("oilDrum1.png")).getImage();
-
+		coal = (new ImageIcon("coal1.png")).getImage();
+		gas = (new ImageIcon("gas.png")).getImage();
 	}
 	
 	
+	int max = 16;
+	int min = 1; 
+	int r = (int) ((Math.random() * (max - min)) + min);
+	
 	public Image returnPic() {
-		
-		return oilDrum; 
+		if (r>10) {
+			return coal;
+		}
+		else if (r>=6 ) {
+			return gas;
+		}
+			
+		else {
+		return oilDrum;
+		}
 	}
 
 	
@@ -111,6 +125,13 @@ public class BadResource extends JPanel implements Resources{
 	public Image returnImage() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+
+	@Override
+	public double returnPoints() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 
