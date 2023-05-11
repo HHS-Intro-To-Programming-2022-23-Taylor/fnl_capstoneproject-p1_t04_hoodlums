@@ -9,30 +9,20 @@ import java.awt.Image;
 import java.awt.Graphics;
 
 public class BadResource extends JPanel implements Resources{
-	private int points;
-
-	private double xCoord, yCoord;
-
-	private Image solar, wind, hydro, picture;
 	
-	private Image oilDrum;
-	
-
-
-	
+		
 	static int points;
 	
 	private double xCoord, yCoord, slope;
 	
-	private Image coal, oil, gas;
+	private Image coal, oilDrum, gas;
 	
 	private int vertex;
 	
 	
-	public BadResource(int x, int y, Image pic) {
+	public BadResource(int x, int y) {
 		// TODO Auto-generated constructor stub
 		
-		picture = pic;
 		xCoord = x;
 		yCoord = y; 
 		oilDrum = (new ImageIcon("oilDrum1.png")).getImage();
@@ -48,7 +38,7 @@ public class BadResource extends JPanel implements Resources{
 //		
 //	}
 	
-	public Image returnImage() {
+	public Image returnPic() {
 		
 		return oilDrum; 
 	}
@@ -58,15 +48,8 @@ public class BadResource extends JPanel implements Resources{
 	public void changePoints() {
 		
 		points-=10;
-
-	public double returnPoints() {
-
-		// TODO Auto-generated method stub
-		return 0;
-
 	}
-
-
+	
 
 	@Override
 	public double giveX() {
@@ -75,30 +58,20 @@ public class BadResource extends JPanel implements Resources{
 		return xCoord;
 
 
-		// TODO Auto-generated method stub
-		return 0;
-
 	}
 
 	@Override
 	public double giveY() {
-		// TODO Auto-generated method stub
+		
 		return yCoord;
 	}
 
 	
 
-	@Override
-	public Image returnPic() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-
+	
 	@Override
 	public double giveSlope() {
-		// TODO Auto-generated method stub
+		
 		return slope;
 	}
 
@@ -106,7 +79,7 @@ public class BadResource extends JPanel implements Resources{
 
 	@Override
 	public int giveVertex() {
-		// TODO Auto-generated method stub
+		
 		return vertex;
 	}
 

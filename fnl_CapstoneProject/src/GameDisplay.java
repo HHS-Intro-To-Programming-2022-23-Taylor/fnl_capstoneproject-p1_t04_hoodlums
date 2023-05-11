@@ -11,12 +11,9 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	
 	private double xCoord, yCoord, clickedX, clickedY; 
 	private int height = 650, width = 900;
-	private JButton movingObject; 
-	private Image oilDrum;
-	//private BadResource oil;
-//  private JButton test; 
 	
-	//private Resources gResource, bResource ; 
+	
+	private Resources gResource, bResource ; 
 	
 	private boolean clicked;
 	
@@ -36,19 +33,6 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		clickedY = 0;
 		
 		
-
-//		movingObject = new JButton("Click Me");
-//		movingObject.setBackground(Color.GREEN);
-//		c.add(movingObject);
-		
-//		movingObject = new JButton("Click Me");
-//		movingObject.setBackground(Color.GREEN);
-//		movingObject.setSize(100, 100);
-//		movingObject.setLocation(100, 100);
-		
-		
-		oilDrum = (new ImageIcon("oilDrum1.png")).getImage();
-		BadResource oil = new BadResource(30,30,oilDrum);
 		
 		//gResource = new GoodResource();
 		BadResource bResource = new BadResource();
@@ -74,9 +58,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		setBackground(Color.WHITE);
 
 		super.paintComponent(g);
-//		JButton button = new JButton ("Click Me");
-//		button.setSize(100,100);
-		//button.add(button);
+		
 		g.setColor(Color.ORANGE);
 		g.fillOval((int)xCoord, (int)yCoord, 50, 50);
 		
@@ -84,13 +66,8 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		g.fillRect((int)xCoord, (int)yCoord, 100, 100);
 
 		
-		//GoodResource g1 = new GoodResource(); 
-		
-		//add(movingObject);
-		//add(test);
-		
 		Graphics2D g2 = (Graphics2D)g;
-		g2.drawImage(bResource.returnImage(), (int)xCoord,(int)yCoord, this);
+		g2.drawImage(bResource.returnPic(), (int)xCoord,(int)yCoord, this);
 		
 	}
 	
@@ -99,11 +76,8 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		xCoord++;
 		yCoord  = 0.004*((xCoord-450)*(xCoord-450))+100;
-		//0.00428571428
-		//System.out.println(xCoord + " "+ yCoord);
 		
-
-	//	System.out.println(xCoord + " "+ yCoord);
+		//	System.out.println(xCoord + " "+ yCoord);
 
 		repaint();
 	}
