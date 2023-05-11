@@ -9,5 +9,7 @@ public interface Resources {
 	public void makeSlope();
 	public void makeVertex();
 	public Image returnPic();
-
+	public double giveX();
+	public double giveY();
+	
 }
