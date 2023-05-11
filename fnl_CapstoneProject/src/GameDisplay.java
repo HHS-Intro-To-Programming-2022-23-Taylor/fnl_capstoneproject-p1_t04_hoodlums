@@ -12,7 +12,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	private double xCoord, yCoord, clickedX, clickedY; 
 	private int height = 650, width = 900;
 	
-	
+
 	private Resources gResource, bResource ; 
 	
 	private boolean clicked;

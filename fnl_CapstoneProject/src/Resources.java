@@ -4,8 +4,6 @@ public interface Resources {
 	
 
 	public void changePoints();
-	public double giveX();
-	public double giveY();
 	public double giveSlope();
 	public int giveVertex();
 	public void makeSlope();

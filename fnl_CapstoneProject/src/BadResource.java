@@ -9,6 +9,14 @@ import java.awt.Image;
 import java.awt.Graphics;
 
 public class BadResource extends JPanel implements Resources{
+
+
+
+
+	private Image solar, wind, hydro, picture;
+	
+	private Image oilDrum;
+
 	
 		
 	static int points;
@@ -45,9 +53,20 @@ public class BadResource extends JPanel implements Resources{
 
 	
 
-	public void changePoints() {
+	public void changePoints() { 
 		
 		points-=10;
+
+		
+	}
+
+	public double returnPoints() {
+
+		// TODO Auto-generated method stub
+		return 0;
+
+
+
 	}
 	
 
@@ -56,6 +75,10 @@ public class BadResource extends JPanel implements Resources{
 
 		
 		return xCoord;
+
+
+
+		// TODO Auto-generated method stub
 
 
 	}
@@ -97,6 +120,12 @@ public class BadResource extends JPanel implements Resources{
 	public void makeVertex() {
 		
 		vertex = (int)((Math.random()*200)+350); 
+	}
+
+	@Override
+	public double createPath() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
