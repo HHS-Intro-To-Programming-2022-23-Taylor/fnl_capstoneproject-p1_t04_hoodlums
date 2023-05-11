@@ -15,6 +15,7 @@ public class GoodResource extends JFrame implements Resources{
 	private double xCoord, yCoord, slope;
 	
 	private int vertex;
+
 	
 	
 	
@@ -31,27 +32,11 @@ public class GoodResource extends JFrame implements Resources{
 
 
 
-	public GoodResource(int x, int y, Image pic) {
+	public GoodResource(int x, int y) {
 
-
-		
-		picture = pic; 
 		xCoord = x; 
 		yCoord = y; 
-//				super.test = new JButton("touch me");
-//				
-//				//setLayout (new FlowLayout());
-//			
-//				
-//				super.setVisible(true);
-//				super.setLocation(200,200);
-//				super.setSize(100,100);
-//				super.setBackground(Color.BLUE);
-//				super.setDefaultCloseOperation(EXIT_ON_CLOSE);
-				
-				
-				
-
+											
 	}
 
 	@Override
@@ -62,21 +47,12 @@ public class GoodResource extends JFrame implements Resources{
 		
 	}
 
-
-
-
-	public double returnPoints() { 
-
-		// TODO Auto-generated method stub
-		return 0;
-
 	}
 
+
+	
+
 	@Override
-
-
-
-
 
 	public double giveX() {
 		
@@ -86,45 +62,25 @@ public class GoodResource extends JFrame implements Resources{
 	@Override
 	public double giveY() {
 
-		// TODO Auto-generated method stub
 		return yCoord;
 	}
 	
-	@Override
-
-
-	public int getY() {
-
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-
-	
-
-	public double createPath() {
-
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 
 	@Override
 	public Image returnPic() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public double giveSlope() {
-		// TODO Auto-generated method stub
+		
 		return slope;
 	}
 
 	@Override
 	public int giveVertex() {
-		// TODO Auto-generated method stub
+		
 		return vertex;
 	}
 
