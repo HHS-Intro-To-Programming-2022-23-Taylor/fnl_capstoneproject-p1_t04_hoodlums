@@ -47,7 +47,7 @@ public class GoodResource extends JFrame implements Resources{
 		
 	}
 
-	}
+	
 
 
 	
@@ -94,6 +94,24 @@ public class GoodResource extends JFrame implements Resources{
 	public void makeVertex() {
 		
 		vertex = (int)((Math.random()*200)+350);
+	}
+
+	@Override
+	public double returnPoints() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public double createPath() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Image returnImage() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -17,9 +17,9 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	
 	private boolean clicked;
 	
-	Color color ; 
+	Color color; 
 	
-
+	//oilDrum = bResource;
 	
 	
 	public GameDisplay () {
@@ -35,7 +35,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		
 		//gResource = new GoodResource();
-		bResource = new BadResource(25, 600);
+		BadResource bResource = new BadResource();
 		
 		
 		
@@ -59,16 +59,15 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 
 		super.paintComponent(g);
 		
-		//g.setColor(Color.ORANGE);
-		//g.fillOval((int)xCoord, (int)yCoord, 50, 50);
+		g.setColor(Color.ORANGE);
+		g.fillOval((int)xCoord, (int)yCoord, 50, 50);
 		
 		g.setColor(Color.black);
-		g.drawRect((int)xCoord, (int)yCoord, 100, 100);
-		g.setColor(Color.white);
-		g.drawRect((int)xCoord+10, (int)yCoord+10, 80, 80);
+		g.fillRect((int)xCoord, (int)yCoord, 100, 100);
+
 		
 		Graphics2D g2 = (Graphics2D)g;
-		g2.drawImage(bResource.returnPic(), (int)xCoord,(int)yCoord-5, this);
+		g2.drawImage(bResource.returnPic(), (int)xCoord,(int)yCoord, this);
 		
 	}
 	

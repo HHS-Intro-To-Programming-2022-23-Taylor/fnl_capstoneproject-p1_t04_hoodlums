@@ -15,7 +15,7 @@ public class BadResource extends JPanel implements Resources{
 
 	private Image solar, wind, hydro, picture;
 	
-	private Image oilDrum;
+
 
 	
 		
@@ -126,6 +126,12 @@ public class BadResource extends JPanel implements Resources{
 	public double createPath() {
 		// TODO Auto-generated method stub
 		return 0;
+	}
+
+	@Override
+	public Image returnImage() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
