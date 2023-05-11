@@ -35,7 +35,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		
 		//gResource = new GoodResource();
-		BadResource bResource = new BadResource();
+		bResource = new BadResource(25, 600);
 		
 		
 		
@@ -59,15 +59,16 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 
 		super.paintComponent(g);
 		
-		g.setColor(Color.ORANGE);
-		g.fillOval((int)xCoord, (int)yCoord, 50, 50);
+		//g.setColor(Color.ORANGE);
+		//g.fillOval((int)xCoord, (int)yCoord, 50, 50);
 		
 		g.setColor(Color.black);
-		g.fillRect((int)xCoord, (int)yCoord, 100, 100);
-
+		g.drawRect((int)xCoord, (int)yCoord, 100, 100);
+		g.setColor(Color.white);
+		g.drawRect((int)xCoord+10, (int)yCoord+10, 80, 80);
 		
 		Graphics2D g2 = (Graphics2D)g;
-		g2.drawImage(bResource.returnPic(), (int)xCoord,(int)yCoord, this);
+		g2.drawImage(bResource.returnPic(), (int)xCoord,(int)yCoord-5, this);
 		
 	}
 	
