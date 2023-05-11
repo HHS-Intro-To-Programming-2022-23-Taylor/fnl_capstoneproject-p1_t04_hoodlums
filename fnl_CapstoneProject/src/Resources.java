@@ -25,6 +25,10 @@ public interface Resources {
 
 	public double giveX();
 	public double giveY();
+	public void changeX(double x);
+	public void changeY(double y);
+	public void setClickState(boolean x);
+	public boolean returnClickState();
 	
 
 }

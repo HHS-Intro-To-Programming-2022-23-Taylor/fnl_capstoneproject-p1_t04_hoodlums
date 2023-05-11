@@ -15,13 +15,16 @@ public class GoodResource extends JFrame implements Resources{
 	private int vertex;
 
 	private Image solar, wind, hydro, picture;
+	
+	private boolean clickState;
 
 
 	public GoodResource(int x, int y) {
 
 		xCoord = x; 
 		yCoord = y; 
-											
+			
+		clickState = false;
 	}
 
 	@Override
@@ -68,7 +71,9 @@ public class GoodResource extends JFrame implements Resources{
 
 	@Override
 	public double giveY() {
-
+		
+		
+		
 		return yCoord;
 	}
 	
@@ -99,6 +104,7 @@ public class GoodResource extends JFrame implements Resources{
 	}
 
 	@Override
+
 	public double returnPoints() {
 		// TODO Auto-generated method stub
 		return 0;
@@ -115,6 +121,31 @@ public class GoodResource extends JFrame implements Resources{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
+	public void changeX(double x) {
+		
+		xCoord = x;
+	}
+
+	@Override
+	public void changeY(double y) {
+		
+		yCoord = y;
+	}
+
+	@Override
+	public void setClickState(boolean x) {
+		
+		clickState = x;
+	}
+
+	@Override
+	public boolean returnClickState() {
+		
+		return clickState;
+	}
+	
 
 }
 

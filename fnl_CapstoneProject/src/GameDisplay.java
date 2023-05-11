@@ -35,8 +35,12 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		
 		//gResource = new GoodResource();
+
 		 bResource = new BadResource((int)xCoord,(int)yCoord);
 		
+		bResource = new BadResource(25, 600);
+		gResource = new GoodResource(25, 600);
+
 		
 		
 
@@ -67,16 +71,19 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 
 		
 		Graphics2D g2 = (Graphics2D)g;
+
 		g2.drawImage(bResource.returnPic(), (int)xCoord,(int)yCoord, this);
+
+		g2.drawImage(bResource.returnPic(), (int)bResource.giveX(),(int)bResource.giveY()-5, this);
+
 		
 	}
 	
 	
 	public void actionPerformed(ActionEvent e) {
 		
-		xCoord++;
-		yCoord  = 0.004*((xCoord-450)*(xCoord-450))+100;
-		
+		this.bResource.changeX(bResource.giveX()+1);
+		this.bResource.changeY(0.004*((bResource.giveX()-450)*(bResource.giveX()-450))+100);   
 		//	System.out.println(xCoord + " "+ yCoord);
 
 		repaint();
@@ -84,7 +91,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	
 	
 	public static void main(String[] args) {
-		JFrame w = new JFrame("Trial");
+		JFrame w = new JFrame("Resource Ninja");
 		w.setBounds(250,100,900,650);
 		
 		Container c = w.getContentPane();
@@ -103,15 +110,15 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		clickedX = e.getX();
 		clickedY = e.getY();
 		
-		checkClick(gResource);
+		checkClick(bResource);
 	}
 
-	private boolean checkClick(Resources x) {
+	private void checkClick(Resources x) {
 		
 		if (	(clickedX >= x.giveX())&&(clickedX <= x.giveX()+100)&&(clickedY >= x.giveY())&&(clickedY <= x.giveY()+100)	)		
-			return true;
+			x.setClickState(true);
 		else 
-			return false;
+			x.setClickState(false);
 		
 	}
 	

@@ -30,15 +30,23 @@ public class BadResource extends JPanel implements Resources{
 	
 	private int vertex;
 	
+	private boolean clickState;
 	
 	public BadResource(int x, int y) {
-		// TODO Auto-generated constructor stub
+		
 		
 		xCoord = x;
 		yCoord = y; 
+		
+		clickState = false;
+		
 		oilDrum = (new ImageIcon("oilDrum1.png")).getImage();
+
 		coal = (new ImageIcon("coal1.png")).getImage();
 		gas = (new ImageIcon("gas.png")).getImage();
+
+			
+
 	}
 	
 	
@@ -82,8 +90,6 @@ public class BadResource extends JPanel implements Resources{
 	}
 
 	
-
-	
 	@Override
 	public double giveSlope() {
 		
@@ -115,6 +121,7 @@ public class BadResource extends JPanel implements Resources{
 	}
 
 
+
 	@Override
 	public double createPath() {
 		// TODO Auto-generated method stub
@@ -125,14 +132,44 @@ public class BadResource extends JPanel implements Resources{
 	public Image returnImage() {
 		// TODO Auto-generated method stub
 		return null;
+
+
+	@Override
+	public void changeX(double x) {
+		
+		xCoord = x;
+
 	}
 
 
 	@Override
+
 	public double returnPoints() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
+
+
+	public void changeY(double y) {
+		
+		yCoord = y;
+	}
+
+
+	@Override
+	public void setClickState(boolean x) {
+		
+		clickState = x;
+	}
+
+
+	@Override
+	public boolean returnClickState() {
+		
+		return clickState;
+	}
+
+	
 
 }
