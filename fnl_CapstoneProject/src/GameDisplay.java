@@ -16,7 +16,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	//private BadResource oil;
 //  private JButton test; 
 	
-	//private Resources gResource, bResource ; 
+	private Resources gResource, bResource ; 
 	
 	private boolean clicked;
 	
