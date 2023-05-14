@@ -10,7 +10,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	
 	
 	private double xCoord, yCoord, clickedX, clickedY; 
-	private int height = 650, width = 900;
+	private int height = 650, width = 900, time;
 	
 
 	private Resources gResource, bResource ; 
@@ -19,6 +19,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	
 	Color color; 
 	
+	private Image bR, gR;
 	//oilDrum = bResource;
 	
 	
@@ -32,7 +33,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		clickedX = 0;
 		clickedY = 0;
 		
-		
+		time = 0;
 		
 		//gResource = new GoodResource();
 
@@ -81,11 +82,14 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	
 	
 	public void actionPerformed(ActionEvent e) {
-		
-		this.bResource.changeX(bResource.giveX()+1);
-		this.bResource.changeY(0.004*((bResource.giveX()-450)*(bResource.giveX()-450))+100);   
+		if (time>1){
+			bResource.changeX(bResource.giveX()+1);
+			bResource.changeY(0.004*((bResource.giveX()-450)*(bResource.giveX()-450))+100);   
+		}
 		//	System.out.println(xCoord + " "+ yCoord);
-
+		
+		time++;
+		
 		repaint();
 	}
 	
@@ -122,7 +126,9 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 	}
 	
-	
+	public void shuffle(Resources x) {
+		
+	}
 	
 	
 	

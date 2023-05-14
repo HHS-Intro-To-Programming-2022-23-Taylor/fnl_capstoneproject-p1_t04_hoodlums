@@ -12,21 +12,12 @@ import java.util.Random;
 public class BadResource extends JPanel implements Resources{
 
 
-
-
-
-	private Image solar, wind, hydro, picture;
-	
-
-
-	
-
 		
 	static int points;
 	
 	private double xCoord, yCoord, slope;
 	
-	private Image coal, oilDrum, gas;
+	private Image coal, oilDrum, gas, picture;
 	
 	private int vertex;
 	
@@ -50,11 +41,12 @@ public class BadResource extends JPanel implements Resources{
 	}
 	
 	
-	int max = 16;
-	int min = 1; 
-	int r = (int) ((Math.random() * (max - min)) + min);
 	
 	public Image returnPic() {
+		
+		int r = (int) ((Math.random() * (15)) + 1);
+
+		
 		if (r>10) {
 			return coal;
 		}
@@ -121,34 +113,12 @@ public class BadResource extends JPanel implements Resources{
 	}
 
 
-
-	@Override
-	public double createPath() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public Image returnImage() {
-		// TODO Auto-generated method stub
-		return null;
-
-
 	@Override
 	public void changeX(double x) {
 		
 		xCoord = x;
 
 	}
-
-
-	@Override
-
-	public double returnPoints() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
 
 
 	public void changeY(double y) {

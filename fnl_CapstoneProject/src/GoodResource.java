@@ -47,20 +47,13 @@ public class GoodResource extends JFrame implements Resources{
 			return solar;
 		}
 		else if (r>=6 ) {
-			return gas;
+			return wind;
 		}
 			
 		else {
-		return oilDrum;
+		return hydro;
 		}
 	}
-
-
-	
-
-
-	
-
 
 	@Override
 
@@ -103,25 +96,6 @@ public class GoodResource extends JFrame implements Resources{
 		vertex = (int)((Math.random()*200)+350);
 	}
 
-	@Override
-
-	public double returnPoints() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double createPath() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public Image returnImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 	public void changeX(double x) {
 		
@@ -144,6 +118,18 @@ public class GoodResource extends JFrame implements Resources{
 	public boolean returnClickState() {
 		
 		return clickState;
+	}
+
+	@Override
+	public void shufflePic() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Image getPic() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 
