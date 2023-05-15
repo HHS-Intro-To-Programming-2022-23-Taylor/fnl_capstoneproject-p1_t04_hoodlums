@@ -140,6 +140,34 @@ public class BadResource extends JPanel implements Resources{
 		return clickState;
 	}
 
+
+
+	@Override
+	public void shufflePic() {
+		int r = (int) ((Math.random() * (15)) + 1);
+
+		
+		if (r>10) {
+			picture = coal;
+		}
+		else if (r>=6 ) {
+			picture = gas;
+		}
+			
+		else {
+		picture = oilDrum;
+		}
+		
+	}
+
+
+
+	@Override
+	public Image getPic() {
+		
+		return picture;
+	}
+
 	
 
 }

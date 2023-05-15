@@ -73,9 +73,9 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		Graphics2D g2 = (Graphics2D)g;
 
-		g2.drawImage(bResource.returnPic(), (int)xCoord,(int)yCoord, this);
+		g2.drawImage(bResource.getPic(), (int)xCoord,(int)yCoord, this);
 
-		g2.drawImage(bResource.returnPic(), (int)bResource.giveX(),(int)bResource.giveY()-5, this);
+		g2.drawImage(bResource.getPic(), (int)bResource.giveX(),(int)bResource.giveY()-5, this);
 
 		
 	}
