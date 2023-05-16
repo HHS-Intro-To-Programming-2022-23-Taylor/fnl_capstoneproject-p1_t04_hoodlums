@@ -5,10 +5,14 @@ import java.awt.Image;
 import java.awt.*; 
 import java.awt.event.*;
 import javax.swing.*;
-
+/*Authors: Bharath Jayadev, Ojas Khandelwal 
+ *Date: 5/16
+ *Rev:01
+ *Notes:
+ */
 public class GoodResource extends JFrame implements Resources{
 	
-	static int points;
+
 	
 	private double xCoord, yCoord, slope;
 	
@@ -17,13 +21,14 @@ public class GoodResource extends JFrame implements Resources{
 	private Image solar, wind, hydro, picture;
 	
 	private boolean clickState;
-
-
+	
+	static int points;
+	
 	public GoodResource(int x, int y) {
 
 		xCoord = x; 
 		yCoord = y; 
-			
+		
 		clickState = false;
 		
 		solar = (new ImageIcon("solar.png")).getImage();

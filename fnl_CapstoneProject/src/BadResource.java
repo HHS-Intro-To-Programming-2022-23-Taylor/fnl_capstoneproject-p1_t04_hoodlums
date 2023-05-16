@@ -8,12 +8,16 @@ import javax.swing.*;
 import java.awt.Image;
 import java.awt.Graphics;
 import java.util.Random;
-
+/*Authors: Bharath Jayadev, Ojas Khandelwal 
+ *Date: 5/16
+ *Rev:01
+ *Notes:
+ */
 public class BadResource extends JPanel implements Resources{
 
 
 		
-	static int points;
+	
 	
 	private double xCoord, yCoord, slope;
 	
@@ -22,6 +26,8 @@ public class BadResource extends JPanel implements Resources{
 	private int vertex;
 	
 	private boolean clickState;
+	
+	static int points;
 	
 	public BadResource(int x, int y) {
 		
@@ -35,7 +41,9 @@ public class BadResource extends JPanel implements Resources{
 
 		coal = (new ImageIcon("coal1.png")).getImage();
 		gas = (new ImageIcon("gas.png")).getImage();
-
+		
+	
+		
 		
 		this.makeSlope();
 		this.makeVertex();
