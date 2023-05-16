@@ -82,7 +82,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	
 	
 	public void actionPerformed(ActionEvent e) {
-		if (time>1){
+		if (time>2){
 			bResource.changeX(bResource.giveX()+1);
 			bResource.changeY(0.004*((bResource.giveX()-450)*(bResource.giveX()-450))+100);   
 		}
