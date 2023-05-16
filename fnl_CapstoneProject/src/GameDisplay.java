@@ -1,10 +1,11 @@
-// This class does nothing
-// it is created to establish the GitHub
-// repository.
 import java.awt.*; 
 import java.awt.event.*;
 import javax.swing.*;
-
+/*Authors: Bharath Jayadev, Ojas Khandelwal 
+ *Date: 5/16
+ *Rev:01
+ *Notes:
+ */
 
 public class GameDisplay extends JPanel implements ActionListener, MouseListener {
 	
@@ -76,15 +77,16 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 
 		g2.drawImage(bResource.getPic(), (int)bResource.giveX(),(int)bResource.giveY()-5, this);
 
-		
+		g.setColor(Color.CYAN);
+		g.fillRect(10, 20, 20, 10);
+		g.drawString("Hi there", 10, 20);
 	}
 	
 	
 	public void actionPerformed(ActionEvent e) {
 
-		if (time>2){
 
-		if (time>4){
+		if (time>10){
 
 			bResource.changeX(bResource.giveX()+1);
 			bResource.changeY(0.004*((bResource.giveX()-450)*(bResource.giveX()-450))+100);   
@@ -94,7 +96,8 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		time++;
 		
 		repaint();
-	}
+		}
+	
 	
 	
 	public static void main(String[] args) {
@@ -122,8 +125,10 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 
 	private void checkClick(Resources x) {
 		
-		if (	(clickedX >= x.giveX())&&(clickedX <= x.giveX()+100)&&(clickedY >= x.giveY())&&(clickedY <= x.giveY()+100)	)		
-			x.setClickState(true);
+		if (	(clickedX >= x.giveX())&&(clickedX <= x.giveX()+100)&&(clickedY >= x.giveY())&&(clickedY <= x.giveY()+100)	) {
+			x.setClickState(true); 
+			x.changePoints();
+		}
 		else 
 			x.setClickState(false);
 		

@@ -1,5 +1,9 @@
 import java.awt.*;
-
+/*Authors: Ojas Khandelwal 
+ *Date: 5/16
+ *Rev:01
+ *Notes:
+ */
 public interface Resources {
 	
 
