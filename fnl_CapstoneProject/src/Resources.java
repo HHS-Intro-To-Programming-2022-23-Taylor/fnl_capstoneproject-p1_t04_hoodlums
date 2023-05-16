@@ -21,5 +21,7 @@ public interface Resources {
 	public void setClickState(boolean x);
 	public boolean returnClickState();
 	
+	public void resetObj();
+	
 
 }

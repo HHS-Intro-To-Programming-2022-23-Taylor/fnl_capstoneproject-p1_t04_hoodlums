@@ -13,14 +13,14 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	private int height = 650, width = 900, time;
 	
 
-	private Resources gResource, bResource ; 
+	private Resources g1, b1 ; 
 	
 	private boolean clicked;
 	
 	Color color; 
 	
 	private Image bR, gR;
-	//oilDrum = bResource;
+	//oilDrum = b1;
 	
 	
 	public GameDisplay () {
@@ -39,12 +39,12 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 
 		
 		
-		bResource = new BadResource(25, 600);
-		gResource = new GoodResource(25, 600);
+		b1 = new BadResource(25, 700);
+		g1 = new GoodResource(25, 700);
 
 		
-		bResource.shufflePic();
-		gResource.shufflePic();
+		b1.shufflePic();
+		g1.shufflePic();
 
 		addMouseListener(this);
 		
@@ -72,24 +72,30 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		Graphics2D g2 = (Graphics2D)g;
 
-		g2.drawImage(bResource.getPic(), (int)xCoord,(int)yCoord, this);
+	
 
-		g2.drawImage(bResource.getPic(), (int)bResource.giveX(),(int)bResource.giveY()-5, this);
-
+		g2.drawImage(b1.getPic(), (int)b1.giveX(),(int)b1.giveY()-5, this);
+		
+		
+		g2.drawImage(g1.getPic(), (int)g1.giveX(),(int)g1.giveY()-5, this);
 		
 	}
 	
 	
 	public void actionPerformed(ActionEvent e) {
 
-		if (time>2){
+		if (time>10){
 
-		if (time>4){
-
-			bResource.changeX(bResource.giveX()+1);
-			bResource.changeY(0.004*((bResource.giveX()-450)*(bResource.giveX()-450))+100);   
+			b1.changeX(b1.giveX()+1);
+			b1.changeY(b1.giveSlope()*((b1.giveX()+b1.giveX()/5-b1.giveVertex())*(b1.giveX()+b1.giveX()/5-b1.giveVertex()))+100);   
 		}
-		//	System.out.println(xCoord + " "+ yCoord);
+		
+		if (time>100){
+
+			g1.changeX(g1.giveX()+1);
+			g1.changeY(g1.giveSlope()*((g1.giveX()+g1.giveX()/5-g1.giveVertex())*(g1.giveX()+g1.giveX()/5-g1.giveVertex()))+100);   
+		}
+		
 		
 		time++;
 		
@@ -117,21 +123,22 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		clickedX = e.getX();
 		clickedY = e.getY();
 		
-		checkClick(bResource);
+		checkClick(b1);
+		checkClick(g1);
 	}
 
 	private void checkClick(Resources x) {
 		
-		if (	(clickedX >= x.giveX())&&(clickedX <= x.giveX()+100)&&(clickedY >= x.giveY())&&(clickedY <= x.giveY()+100)	)		
+		if (	(clickedX >= x.giveX())&&(clickedX <= x.giveX()+100)&&(clickedY >= x.giveY())&&(clickedY <= x.giveY()+100)	)	{
 			x.setClickState(true);
+			x.resetObj();
+		}
 		else 
 			x.setClickState(false);
 		
 	}
 	
-	public void shuffle(Resources x) {
-		
-	}
+	
 	
 	
 	

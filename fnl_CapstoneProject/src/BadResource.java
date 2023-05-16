@@ -37,7 +37,8 @@ public class BadResource extends JPanel implements Resources{
 		gas = (new ImageIcon("gas.png")).getImage();
 
 		
-
+		this.makeSlope();
+		this.makeVertex();
 	}
 	
 	
@@ -52,7 +53,10 @@ public class BadResource extends JPanel implements Resources{
 
 	@Override
 	public double giveX() {
-
+		
+		if (xCoord > (this.giveVertex()-100)*2) 
+			this.resetObj();
+		
 		return xCoord;
 	}
 
@@ -147,6 +151,17 @@ public class BadResource extends JPanel implements Resources{
 	public Image getPic() {
 		
 		return picture;
+	}
+
+
+
+	@Override
+	public void resetObj() {
+
+		xCoord = 100;
+		this.shufflePic();
+		this.makeSlope();
+		this.makeVertex();
 	}
 
 	

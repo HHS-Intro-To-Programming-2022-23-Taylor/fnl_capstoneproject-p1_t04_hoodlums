@@ -25,6 +25,13 @@ public class GoodResource extends JFrame implements Resources{
 		yCoord = y; 
 			
 		clickState = false;
+		
+		solar = (new ImageIcon("solar.png")).getImage();
+		wind = (new ImageIcon("wind.png")).getImage();
+		hydro = (new ImageIcon("hydro.png")).getImage();
+		
+		this.makeSlope();
+		this.makeVertex();
 	}
 
 	@Override
@@ -32,10 +39,6 @@ public class GoodResource extends JFrame implements Resources{
 	public void changePoints() { 
 		
 		points+=10;
-	
-		solar = (new ImageIcon("solar.png")).getImage();
-		wind = (new ImageIcon("wind.png")).getImage();
-		hydro = (new ImageIcon("hydro.png")).getImage();
 	}
 	
 	
@@ -43,13 +46,15 @@ public class GoodResource extends JFrame implements Resources{
 
 	public double giveX() {
 		
+		if (xCoord > (this.giveVertex()-100)*2) 
+			this.resetObj();
+		
+		
 		return xCoord;
 	}
 
 	@Override
 	public double giveY() {
-		
-		
 		
 		return yCoord;
 	}
@@ -124,6 +129,16 @@ public class GoodResource extends JFrame implements Resources{
 	public Image getPic() {
 		
 		return picture;
+	}
+
+	@Override
+	public void resetObj() {
+		
+		xCoord = 100;
+		this.shufflePic();
+		this.makeSlope();
+		this.makeVertex();
+		
 	}
 	
 
