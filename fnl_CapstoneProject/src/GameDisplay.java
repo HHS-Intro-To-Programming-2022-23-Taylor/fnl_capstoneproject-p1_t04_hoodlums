@@ -37,14 +37,14 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		//gResource = new GoodResource();
 
-		 bResource = new BadResource((int)xCoord,(int)yCoord);
+		
 		
 		bResource = new BadResource(25, 600);
 		gResource = new GoodResource(25, 600);
 
 		
-		
-
+		bResource.shufflePic();
+		gResource.shufflePic();
 
 		addMouseListener(this);
 		
@@ -64,8 +64,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 
 		super.paintComponent(g);
 		
-		g.setColor(Color.ORANGE);
-		g.fillOval((int)xCoord, (int)yCoord, 50, 50);
+		
 		
 		g.setColor(Color.black);
 		g.fillRect((int)xCoord, (int)yCoord, 100, 100);
@@ -82,7 +81,11 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	
 	
 	public void actionPerformed(ActionEvent e) {
+
 		if (time>2){
+
+		if (time>4){
+
 			bResource.changeX(bResource.giveX()+1);
 			bResource.changeY(0.004*((bResource.giveX()-450)*(bResource.giveX()-450))+100);   
 		}

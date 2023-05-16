@@ -36,31 +36,12 @@ public class BadResource extends JPanel implements Resources{
 		coal = (new ImageIcon("coal1.png")).getImage();
 		gas = (new ImageIcon("gas.png")).getImage();
 
-			
+		
 
 	}
 	
 	
 	
-	public Image returnPic() {
-		
-		int r = (int) ((Math.random() * (15)) + 1);
-
-		
-		if (r>10) {
-			return coal;
-		}
-		else if (r>=6 ) {
-			return gas;
-		}
-			
-		else {
-		return oilDrum;
-		}
-	}
-
-	
-
 	public void changePoints() { 
 		
 		points-=10;
