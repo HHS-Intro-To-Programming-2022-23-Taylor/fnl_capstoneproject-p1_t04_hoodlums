@@ -37,6 +37,8 @@ public class GoodResource extends JFrame implements Resources{
 		
 		this.makeSlope();
 		this.makeVertex();
+		
+		points = 0; 
 	}
 
 	@Override

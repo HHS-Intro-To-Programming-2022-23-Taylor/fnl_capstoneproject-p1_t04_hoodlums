@@ -42,6 +42,7 @@ public class BadResource extends JPanel implements Resources{
 		coal = (new ImageIcon("coal1.png")).getImage();
 		gas = (new ImageIcon("gas.png")).getImage();
 		
+		points = 0; 
 	
 		
 		
@@ -53,7 +54,7 @@ public class BadResource extends JPanel implements Resources{
 	
 	public void changePoints() { 
 		
-		points-=10;
+		points+=10;
 
 		
 	}
@@ -171,6 +172,7 @@ public class BadResource extends JPanel implements Resources{
 		this.makeSlope();
 		this.makeVertex();
 	}
+	
 
 	
 

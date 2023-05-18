@@ -1,6 +1,7 @@
 import java.awt.*; 
 import java.awt.event.*;
 import javax.swing.*;
+import java.awt.Font.*;
 /*Authors: Bharath Jayadev, Ojas Khandelwal 
  *Date: 5/16
  *Rev:01
@@ -23,6 +24,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	private Image bR, gR;
 	//oilDrum = b1;
 	
+	private JTextField display;
 	
 	public GameDisplay () {
 		
@@ -51,7 +53,15 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		color = (Color.yellow);
 		
-
+		
+		display = new JTextField("Score:",20);
+	    display.setFont(new Font("Monospaced Bold", Font.BOLD, 20));
+	    display.setBackground(Color.GREEN);
+	    display.setEditable(false);
+	    display.setHorizontalAlignment(JTextField.CENTER);
+		add(display);
+	    
+		
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -82,10 +92,20 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		g2.drawImage(g1.getPic(), (int)g1.giveX(),(int)g1.giveY()-5, this);
 		
 
-		g.setColor(Color.CYAN);
-		g.fillRect(10, 20, 20, 10);
-		g.drawString("Hi there", 10, 20);
+		
+		
+//		g.setColor(Color.CYAN);
+//		g.fillRect(10, 20, 20, 10);
+//		g.setColor(Color.MAGENTA);
 
+		//g.drawString("Hi there", 20, 10);
+//		JLabel label = new JLabel ("Score:" + (GoodResource.points + BadResource.points));
+//		label.setFont(new Font("Times", Font.BOLD, 12));
+//		label.setForeground(Color.RED);
+//		this.add(label);
+//		
+	    
+		display.setText("SCORE: " + (GoodResource.points - BadResource.points));
 	}
 	
 	
@@ -97,7 +117,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 			b1.changeX(b1.giveX()+1);
 			b1.changeY(b1.giveSlope()*((b1.giveX()+b1.giveX()/5-b1.giveVertex())*(b1.giveX()+b1.giveX()/5-b1.giveVertex()))+100);   
 
-
+		}
 		
 		
 		if (time>100){
@@ -110,6 +130,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		time++;
 		
 		repaint();
+			
 		}
 	
 	
