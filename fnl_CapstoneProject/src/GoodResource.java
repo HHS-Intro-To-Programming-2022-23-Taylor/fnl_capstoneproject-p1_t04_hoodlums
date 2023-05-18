@@ -16,9 +16,9 @@ public class GoodResource extends JFrame implements Resources{
 	
 	private double xCoord, yCoord, slope;
 	
-	private int vertex;
+	private int vertex, timeClicked, clickedX, clickedY;
 
-	private Image solar, wind, hydro, picture;
+	private Image solar, wind, hydro, picture, check;
 	
 	private boolean clickState;
 	
@@ -35,8 +35,15 @@ public class GoodResource extends JFrame implements Resources{
 		wind = (new ImageIcon("wind.png")).getImage();
 		hydro = (new ImageIcon("hydro.png")).getImage();
 		
+		check = (new ImageIcon("check.png")).getImage();
+		
 		this.makeSlope();
 		this.makeVertex();
+		
+		timeClicked = 0;
+		
+		
+		
 	}
 
 	@Override
@@ -144,6 +151,48 @@ public class GoodResource extends JFrame implements Resources{
 		this.makeSlope();
 		this.makeVertex();
 		
+	}
+
+	@Override
+	public void setClickedTime(int x) {
+		
+		timeClicked = x;
+	}
+
+	@Override
+	public int getClickedTime() {
+
+		return timeClicked;
+	}
+
+	@Override
+	public Image clickedDrawing() {
+		
+		return check;
+	}
+
+	@Override
+	public void setClickedX(int x) {
+		
+		clickedX = x;
+	}
+
+	@Override
+	public void setClickedY(int y) {
+		
+		clickedY = y;
+	}
+
+	@Override
+	public int getClickedX() {
+		
+		return clickedX;
+	}
+
+	@Override
+	public int getClickedY() {
+	
+		return clickedY;
 	}
 	
 

@@ -21,9 +21,9 @@ public class BadResource extends JPanel implements Resources{
 	
 	private double xCoord, yCoord, slope;
 	
-	private Image coal, oilDrum, gas, picture;
+	private Image coal, oilDrum, gas, picture, cross;
 	
-	private int vertex;
+	private int vertex, timeClicked, clickedX, clickedY;
 	
 	private boolean clickState;
 	
@@ -38,15 +38,16 @@ public class BadResource extends JPanel implements Resources{
 		clickState = false;
 		
 		oilDrum = (new ImageIcon("oilDrum1.png")).getImage();
-
 		coal = (new ImageIcon("coal1.png")).getImage();
 		gas = (new ImageIcon("gas.png")).getImage();
 		
-	
+		cross = (new ImageIcon("cross.png")).getImage();
 		
 		
 		this.makeSlope();
 		this.makeVertex();
+		
+		timeClicked= 0;
 	}
 	
 	
@@ -172,6 +173,53 @@ public class BadResource extends JPanel implements Resources{
 		this.makeVertex();
 	}
 
+
+
+	@Override
+	public void setClickedTime(int x) {
+		
+		timeClicked = x;
+	}
+
+
+
+	@Override
+	public int getClickedTime() {
+		
+		return timeClicked;
+	}
+
+
+
+	@Override
+	public Image clickedDrawing() {
+		
+		return cross;
+	}
+	
+	@Override
+	public void setClickedX(int x) {
+		
+		clickedX = x;
+	}
+
+	@Override
+	public void setClickedY(int y) {
+		
+		clickedY = y;
+	}
+
+	@Override
+	public int getClickedX() {
+		
+		return clickedX;
+	}
+
+	@Override
+	public int getClickedY() {
+	
+		return clickedY;
+	}
 	
 
 }

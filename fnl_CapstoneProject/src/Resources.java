@@ -24,6 +24,14 @@ public interface Resources {
 	
 	public void setClickState(boolean x);
 	public boolean returnClickState();
+	public void setClickedTime(int x);
+	public int getClickedTime();
+	public Image clickedDrawing();
+	
+	public void setClickedX(int x);
+	public void setClickedY(int y);
+	public int getClickedX();
+	public int getClickedY();
 	
 	public void resetObj();
 	

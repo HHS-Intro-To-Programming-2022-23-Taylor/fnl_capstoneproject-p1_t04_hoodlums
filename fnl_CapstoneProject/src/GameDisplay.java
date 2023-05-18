@@ -74,12 +74,14 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		Graphics2D g2 = (Graphics2D)g;
 
 	
-
-
+		drawOnClick(g2, b1);
+		drawOnClick(g2, g1);
+		
 		g2.drawImage(b1.getPic(), (int)b1.giveX(),(int)b1.giveY()-5, this);
-		
-		
 		g2.drawImage(g1.getPic(), (int)g1.giveX(),(int)g1.giveY()-5, this);
+		
+		
+		
 		
 
 		g.setColor(Color.CYAN);
@@ -88,6 +90,15 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 
 	}
 	
+	private void drawOnClick(Graphics2D g, Resources x) {
+		
+		if (time > x.getClickedTime()+2000)
+			x.setClickState(false);
+		
+		if (x.returnClickState() == true)
+			g.drawImage(x.clickedDrawing(), x.getClickedX(),x.getClickedY(), this);
+		
+	}
 	
 	public void actionPerformed(ActionEvent e) {
 
@@ -96,7 +107,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 
 			b1.changeX(b1.giveX()+1);
 			b1.changeY(b1.giveSlope()*((b1.giveX()+b1.giveX()/5-b1.giveVertex())*(b1.giveX()+b1.giveX()/5-b1.giveVertex()))+100);   
-
+		}
 
 		
 		
@@ -110,7 +121,8 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		time++;
 		
 		repaint();
-		}
+		
+	}
 	
 	
 	
@@ -142,15 +154,18 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 
 		if (	(clickedX >= x.giveX())&&(clickedX <= x.giveX()+100)&&(clickedY >= x.giveY())&&(clickedY <= x.giveY()+100)	)	{
-			x.setClickState(true);
+	
 			x.resetObj();
 			
-		 
+			x.setClickState(true);
+			x.setClickedTime(time);
+			x.setClickedX((int)clickedX);
+			x.setClickedY((int)clickedY);
+			
 			x.changePoints();
 
 		}
-		else 
-			x.setClickState(false);
+		
 		
 	}
 	
@@ -162,21 +177,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	@Override
 	public void mousePressed(MouseEvent e) {	
