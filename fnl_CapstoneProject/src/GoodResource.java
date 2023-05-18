@@ -40,10 +40,14 @@ public class GoodResource extends JFrame implements Resources{
 		this.makeSlope();
 		this.makeVertex();
 		
+
 		timeClicked = 0;
 		
 		
 		
+
+		points = 0; 
+
 	}
 
 	@Override
