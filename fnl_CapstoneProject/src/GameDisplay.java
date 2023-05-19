@@ -14,6 +14,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	private double xCoord, yCoord, clickedX, clickedY; 
 	private int height = 650, width = 900, time;
 	
+	private Image bgpic = (new ImageIcon("bgpic.png")).getImage();
 
 	private Resources g1, b1 ; 
 	
@@ -77,13 +78,17 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		
 		
-		g.setColor(Color.black);
+		g.setColor(Color.white);
 		g.fillRect((int)xCoord, (int)yCoord, 100, 100);
 
+		g.drawImage(bgpic, 0, 0, null);
+		
 		
 		Graphics2D g2 = (Graphics2D)g;
 
 	
+		
+		
 		drawOnClick(g2, b1);
 		drawOnClick(g2, g1);
 		
@@ -132,7 +137,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 
 
 
-		}
+		
 
 		
 		
@@ -151,7 +156,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	}
 
 			
-		}
+		
 
 	
 	
