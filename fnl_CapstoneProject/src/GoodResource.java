@@ -35,7 +35,7 @@ public class GoodResource extends JFrame implements Resources{
 		wind = (new ImageIcon("wind.png")).getImage();
 		hydro = (new ImageIcon("hydro.png")).getImage();
 		
-		check = (new ImageIcon("check.png")).getImage();
+		check = (new ImageIcon("explosion.gif")).getImage();
 		
 		this.makeSlope();
 		this.makeVertex();
