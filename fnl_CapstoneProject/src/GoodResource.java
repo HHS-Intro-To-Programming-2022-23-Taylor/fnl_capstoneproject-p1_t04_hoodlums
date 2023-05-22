@@ -62,9 +62,10 @@ public class GoodResource extends JFrame implements Resources{
 
 	public double giveX() {
 		
-		if (xCoord > (this.giveVertex()-100)*2) 
+		if ((yCoord > 675)&&(xCoord>this.giveVertex())) {
 			this.resetObj();
-		
+			points-=10;
+		}
 		
 		return xCoord;
 	}
@@ -98,7 +99,7 @@ public class GoodResource extends JFrame implements Resources{
 	@Override
 	public void makeVertex() {
 		
-		vertex = (int)((Math.random()*200)+350);
+		vertex = (int)((Math.random()*500)+200);
 	}
 
 

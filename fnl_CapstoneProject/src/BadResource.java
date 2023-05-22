@@ -108,7 +108,7 @@ public class BadResource extends JPanel implements Resources{
 	@Override
 	public void makeVertex() {
 		
-		vertex = (int)((Math.random()*200)+350); 
+		vertex = (int)((Math.random()*250)+350); 
 	}
 
 

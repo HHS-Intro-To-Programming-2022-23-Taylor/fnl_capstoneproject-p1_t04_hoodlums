@@ -124,7 +124,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 			x.setClickState(false);
 		
 		if (x.returnClickState() == true)
-			g.drawImage(x.clickedDrawing(), x.getClickedX(),x.getClickedY(), this);
+			g.drawImage(x.clickedDrawing(), x.getClickedX()-50,x.getClickedY()-50, this);
 		
 	}
 	
