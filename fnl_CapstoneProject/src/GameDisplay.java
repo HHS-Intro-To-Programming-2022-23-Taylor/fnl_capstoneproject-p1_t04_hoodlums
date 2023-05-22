@@ -16,7 +16,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	
 	private Image bgpic = (new ImageIcon("bgpic.png")).getImage();
 
-	private Resources g1, b1 ; 
+	private Resources g1, b1, g2, b2, g3, b3, g4, g5 ; 
 	
 	private boolean clicked;
 	
@@ -45,11 +45,22 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		b1 = new BadResource(25, 700);
 		g1 = new GoodResource(25, 700);
-
+		b2 = new BadResource(25, 700);
+		g2 = new GoodResource(25, 700);
+		b3 = new BadResource(25, 700);
+		g3 = new GoodResource(25, 700);
+		g4 = new GoodResource(25,700);
+		g5 = new GoodResource(25, 700);
 		
 		b1.shufflePic();
+		b2.shufflePic();
+		b3.shufflePic();
 		g1.shufflePic();
-
+		g2.shufflePic();
+		g3.shufflePic();
+		g4.shufflePic();
+		g5.shufflePic();
+		
 		addMouseListener(this);
 		
 		color = (Color.yellow);
@@ -85,39 +96,31 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		
 		Graphics2D g2 = (Graphics2D)g;
-
-	
-		
 		
 		drawOnClick(g2, b1);
+		drawOnClick(g2, b2);
+		drawOnClick(g2, b3);
 		drawOnClick(g2, g1);
+		drawOnClick(g2, this.g2);
+		drawOnClick(g2, g3);
+		drawOnClick(g2, g4);
+		drawOnClick(g2, g5);
 		
 		g2.drawImage(b1.getPic(), (int)b1.giveX(),(int)b1.giveY()-5, this);
+		g2.drawImage(b2.getPic(), (int)b2.giveX(),(int)b2.giveY()-5, this);
+		g2.drawImage(b3.getPic(), (int)b3.giveX(),(int)b3.giveY()-5, this);
 		g2.drawImage(g1.getPic(), (int)g1.giveX(),(int)g1.giveY()-5, this);
-		
-		
-		
-		
-
-		
-		
-//		g.setColor(Color.CYAN);
-//		g.fillRect(10, 20, 20, 10);
-//		g.setColor(Color.MAGENTA);
-
-		//g.drawString("Hi there", 20, 10);
-//		JLabel label = new JLabel ("Score:" + (GoodResource.points + BadResource.points));
-//		label.setFont(new Font("Times", Font.BOLD, 12));
-//		label.setForeground(Color.RED);
-//		this.add(label);
-//		
+		g2.drawImage(this.g2.getPic(), (int)this.g2.giveX(),(int)this.g2.giveY()-5, this);
+		g2.drawImage(g3.getPic(), (int)g3.giveX(),(int)g3.giveY()-5, this);
+		g2.drawImage(g4.getPic(), (int)g4.giveX(),(int)g4.giveY()-5, this);
+		g2.drawImage(g5.getPic(), (int)g5.giveX(),(int)g5.giveY()-5, this);
 	    
 		display.setText("SCORE: " + (GoodResource.points - BadResource.points));
 	}
 	
 	private void drawOnClick(Graphics2D g, Resources x) {
 		
-		if (time > x.getClickedTime()+2000)
+		if (time > x.getClickedTime()+200)
 			x.setClickState(false);
 		
 		if (x.returnClickState() == true)
@@ -134,12 +137,6 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 			b1.changeY(b1.giveSlope()*((b1.giveX()+b1.giveX()/5-b1.giveVertex())*(b1.giveX()+b1.giveX()/5-b1.giveVertex()))+100);   
 
 		}
-
-
-
-		
-
-		
 		
 		if (time>100){
 
@@ -147,6 +144,42 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 			g1.changeY(g1.giveSlope()*((g1.giveX()+g1.giveX()/5-g1.giveVertex())*(g1.giveX()+g1.giveX()/5-g1.giveVertex()))+100);   
 		}
 		
+		if (time>200){
+
+			g2.changeX(g2.giveX()+1);
+			g2.changeY(g2.giveSlope()*((g2.giveX()+g2.giveX()/5-g2.giveVertex())*(g2.giveX()+g2.giveX()/5-g2.giveVertex()))+100);   
+		}
+		
+		if (time>400){
+
+			b2.changeX(b2.giveX()+1);
+			b2.changeY(b2.giveSlope()*((b2.giveX()+b2.giveX()/5-b2.giveVertex())*(b2.giveX()+b2.giveX()/5-b2.giveVertex()))+100);   
+		}
+		
+		if (time>700){
+
+			g3.changeX(g3.giveX()+1);
+			g3.changeY(g3.giveSlope()*((g3.giveX()+g3.giveX()/5-g3.giveVertex())*(g3.giveX()+g3.giveX()/5-g3.giveVertex()))+100);   
+		}
+
+		if (time>1000){
+
+			g4.changeX(g4.giveX()+1);
+			g4.changeY(g4.giveSlope()*((g4.giveX()+g4.giveX()/5-g4.giveVertex())*(g4.giveX()+g4.giveX()/5-g4.giveVertex()))+100);   
+		}
+		
+		if (time>1200){
+
+			b3.changeX(b3.giveX()+1);
+			b3.changeY(b3.giveSlope()*((b3.giveX()+b3.giveX()/5-b3.giveVertex())*(b3.giveX()+b3.giveX()/5-b3.giveVertex()))+100);   
+		}
+
+		if (time>1500){
+
+			g5.changeX(g5.giveX()+1);
+			g5.changeY(g5.giveSlope()*((g5.giveX()+g5.giveX()/5-g5.giveVertex())*(g5.giveX()+g5.giveX()/5-g5.giveVertex()))+100);   
+		}
+
 		
 		time++;
 		
@@ -155,11 +188,6 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 	}
 
-			
-		
-
-	
-	
 	
 	public static void main(String[] args) {
 		JFrame w = new JFrame("Resource Ninja");
@@ -182,7 +210,13 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		clickedY = e.getY();
 		
 		checkClick(b1);
-		checkClick(g1);
+		checkClick(b2);
+		checkClick(b3);
+		checkClick(g1 );
+		checkClick(g2);
+		checkClick(g3);
+		checkClick(g4);
+		checkClick(g5);
 	}
 
 	private void checkClick(Resources x) {
