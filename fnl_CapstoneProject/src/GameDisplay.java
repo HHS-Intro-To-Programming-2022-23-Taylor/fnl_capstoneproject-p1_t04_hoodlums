@@ -23,7 +23,6 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	Color color; 
 	
 	private Image bR, gR;
-	//oilDrum = b1;
 	
 	private JTextField display;
 	
@@ -120,7 +119,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	
 	private void drawOnClick(Graphics2D g, Resources x) {
 		
-		if (time > x.getClickedTime()+200)
+		if (time > x.getClickedTime()+15)
 			x.setClickState(false);
 		
 		if (x.returnClickState() == true)
