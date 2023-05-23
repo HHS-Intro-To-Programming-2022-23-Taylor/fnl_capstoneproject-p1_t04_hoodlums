@@ -18,7 +18,7 @@ public class GoodResource extends JFrame implements Resources{
 	
 	private int vertex, timeClicked, clickedX, clickedY;
 
-	private Image solar, wind, hydro, picture, check;
+	private Image solar, wind, hydro, wood, picture, check;
 	
 	private boolean clickState;
 	
@@ -34,6 +34,7 @@ public class GoodResource extends JFrame implements Resources{
 		solar = (new ImageIcon("solar.png")).getImage();
 		wind = (new ImageIcon("wind.png")).getImage();
 		hydro = (new ImageIcon("hydro.png")).getImage();
+		wood = (new ImageIcon("wood.png")).getImage();
 		
 		check = (new ImageIcon("explosionNOBG.gif")).getImage();
 		
@@ -76,7 +77,6 @@ public class GoodResource extends JFrame implements Resources{
 		return yCoord;
 	}
 	
-
 	
 	@Override
 	public double giveSlope() {
@@ -128,18 +128,19 @@ public class GoodResource extends JFrame implements Resources{
 
 	@Override
 	public void shufflePic() {
-		int r = (int) ((Math.random() * (15)) + 1);
+		int r = (int) ((Math.random() * (20))+1);
 	
-		if (r>10) {
+		if (r>15) {
 			picture = solar;
 		}
-		else if (r>=6 ) {
+		else if (r>10 ) {
 			picture = wind;
 		}
-			
-		else {
-		picture = hydro;
-		}
+		else if (r>5)
+			picture = wood;
+		else 
+			picture = hydro;
+		
 	}
 
 	@Override
