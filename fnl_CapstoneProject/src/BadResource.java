@@ -18,7 +18,7 @@ public class BadResource extends JPanel implements Resources{
 
 		
 	
-	
+	//fields 
 	private double xCoord, yCoord, slope;
 	
 	private Image coal, oilDrum, gas, picture, cross;
@@ -29,26 +29,23 @@ public class BadResource extends JPanel implements Resources{
 	
 	static int points;
 	
+	//constructor
 	public BadResource(int x, int y) {
 		
 		
 		xCoord = x;
 		yCoord = y; 
 		
-		clickState = false;
 		
+		//images
+		clickState = false;
 		oilDrum = (new ImageIcon("oilDrum1.png")).getImage();
 		coal = (new ImageIcon("coal1.png")).getImage();
 		gas = (new ImageIcon("gas.png")).getImage();
-		
-
 		cross = (new ImageIcon("cross.png")).getImage();
 
 		points = 0; 
-	
 
-		
-		
 		this.makeSlope();
 		this.makeVertex();
 		
@@ -56,7 +53,7 @@ public class BadResource extends JPanel implements Resources{
 	}
 	
 	
-	
+	//increases points by 10 when clicked
 	public void changePoints() { 
 		
 		points+=10;
@@ -66,6 +63,7 @@ public class BadResource extends JPanel implements Resources{
 
 
 	@Override
+	//gives the X coord for the resource
 	public double giveX() {
 		
 		if (xCoord > (this.giveVertex()-100)*2) 
@@ -75,6 +73,7 @@ public class BadResource extends JPanel implements Resources{
 	}
 
 	@Override
+	//gives the Y coord for the resource
 	public double giveY() {
 		
 		return yCoord;
@@ -82,6 +81,7 @@ public class BadResource extends JPanel implements Resources{
 
 	
 	@Override
+	//gives a slope for the parabolic arc
 	public double giveSlope() {
 		
 		return slope;
@@ -90,6 +90,7 @@ public class BadResource extends JPanel implements Resources{
 
 
 	@Override
+	//gives a random vertex for the parabolic arc
 	public int giveVertex() {
 		
 		return vertex;
@@ -98,6 +99,7 @@ public class BadResource extends JPanel implements Resources{
 
 
 	@Override
+	//Makes a random slope 
 	public void makeSlope() {
 		
 		slope = ((Math.random()*0.011)+0.004);
@@ -106,6 +108,7 @@ public class BadResource extends JPanel implements Resources{
 
 
 	@Override
+	//Makes a random slope 
 	public void makeVertex() {
 		
 		vertex = (int)((Math.random()*250)+350); 
@@ -113,13 +116,14 @@ public class BadResource extends JPanel implements Resources{
 
 
 	@Override
+	//mutator for xCoord
 	public void changeX(double x) {
 		
 		xCoord = x;
 
 	}
 
-
+	//mutator for yCoord
 	public void changeY(double y) {
 		
 		yCoord = y;
@@ -127,6 +131,7 @@ public class BadResource extends JPanel implements Resources{
 
 
 	@Override
+	//Sets click state to true or false
 	public void setClickState(boolean x) {
 		
 		clickState = x;
@@ -134,6 +139,7 @@ public class BadResource extends JPanel implements Resources{
 
 
 	@Override
+	//returns clickstate
 	public boolean returnClickState() {
 		
 		return clickState;
@@ -142,6 +148,7 @@ public class BadResource extends JPanel implements Resources{
 
 
 	@Override
+	//returns random pictures for the resources
 	public void shufflePic() {
 		int r = (int) ((Math.random() * (15)) + 1);
 
@@ -162,6 +169,7 @@ public class BadResource extends JPanel implements Resources{
 
 
 	@Override
+	//accessor for picture
 	public Image getPic() {
 		
 		return picture;
@@ -170,6 +178,7 @@ public class BadResource extends JPanel implements Resources{
 
 
 	@Override
+	//when resource is clicked, resets it
 	public void resetObj() {
 
 		xCoord = 100;
@@ -182,6 +191,7 @@ public class BadResource extends JPanel implements Resources{
 
 
 	@Override
+	//determines time when resource is clicked
 	public void setClickedTime(int x) {
 		
 		timeClicked = x;
@@ -190,6 +200,7 @@ public class BadResource extends JPanel implements Resources{
 
 
 	@Override
+	//accessor for timeClicked
 	public int getClickedTime() {
 		
 		return timeClicked;
@@ -198,30 +209,35 @@ public class BadResource extends JPanel implements Resources{
 
 
 	@Override
+	//returns image after clicking resource
 	public Image clickedDrawing() {
 		
 		return cross;
 	}
 	
 	@Override
+	//returns coordinates when clicked
 	public void setClickedX(int x) {
 		
 		clickedX = x;
 	}
 
 	@Override
+	//returns coordinates when clicked
 	public void setClickedY(int y) {
 		
 		clickedY = y;
 	}
 
 	@Override
+	//accessor for clickedX
 	public int getClickedX() {
 		
 		return clickedX;
 	}
 
 	@Override
+	//accessor for clickY
 	public int getClickedY() {
 	
 		return clickedY;
