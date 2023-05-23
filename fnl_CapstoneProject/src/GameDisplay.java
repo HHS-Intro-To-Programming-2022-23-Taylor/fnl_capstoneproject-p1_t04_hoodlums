@@ -67,7 +67,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		display = new JTextField("Score:",20);
 	    display.setFont(new Font("Monospaced Bold", Font.BOLD, 20));
-	    display.setBackground(Color.GREEN);
+	    display.setBackground(Color.WHITE);
 	    display.setEditable(false);
 	    display.setHorizontalAlignment(JTextField.CENTER);
 		add(display);
