@@ -119,7 +119,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	
 	private void drawOnClick(Graphics2D g, Resources x) {
 		
-		if (time > x.getClickedTime()+15)
+		if (time > x.getClickedTime()+25)
 			x.setClickState(false);
 		
 		if (x.returnClickState() == true)
