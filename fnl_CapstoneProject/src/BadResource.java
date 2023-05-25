@@ -19,15 +19,15 @@ public class BadResource extends JPanel implements Resources{
 		
 	
 	//fields 
-	private double xCoord, yCoord, slope;
+	private double xCoord, yCoord, slope; //properties of the objects movement and location
 	
-	private Image coal, oilDrum, gas, picture, cross;
+	private Image coal, oilDrum, gas, picture, cross; //different possible pictures
 	
-	private int vertex, timeClicked, clickedX, clickedY;
+	private int vertex, timeClicked, clickedX, clickedY; //more properties for location and movement
 	
-	private boolean clickState;
+	private boolean clickState; //clicked o rnot
 	
-	static int points;
+	static int points; //holds points a kind of resource holds
 	
 	//constructor
 	public BadResource(int x, int y) {
@@ -46,6 +46,7 @@ public class BadResource extends JPanel implements Resources{
 
 		points = 0; 
 
+		
 		this.makeSlope();
 		this.makeVertex();
 		
@@ -53,10 +54,10 @@ public class BadResource extends JPanel implements Resources{
 	}
 	
 	
-	//increases points by 10 when clicked
+	//increases points by 10 when clicked, will be subtracted in gamedisplay
 	public void changePoints() { 
 		
-		points+=10;
+		points+=30;
 
 		
 	}

@@ -1,38 +1,36 @@
-import java.awt.*; 
-import java.awt.event.*;
-import javax.swing.*;
-import java.awt.Font.*;
 /*Authors: Bharath Jayadev, Ojas Khandelwal 
  *Date: 5/16
  *Rev:01
  *Notes:
  */
 
-public class GameDisplay extends JPanel implements ActionListener, MouseListener {
-	
-	
-	private double xCoord, yCoord, clickedX, clickedY; 
-	private int height = 650, width = 900, time;
-	
-	private Image bgpic = (new ImageIcon("bgpic.png")).getImage();
+import java.awt.*; 
+import java.awt.event.*;
+import javax.swing.*;
+import java.awt.Font.*;
 
-	private Resources g1, b1, g2, b2, g3, b3, g4, g5 ; 
+public class GameDisplay extends JPanel implements ActionListener, MouseListener { //class extends jPanel and implements action listener and mouselistener
 	
-	private boolean clicked;
+	//fields
+	private double  clickedX, clickedY; 
+	
+	private int time; 
+	
+	private Image bgpic = (new ImageIcon("bgpic.png")).getImage();//background pic
+
+	private Resources g1, b1, g2, b2, g3, b3, g4, g5 ; //moving objects
 	
 	Color color; 
 	
-	private Image bR, gR;
-	
 	private JTextField display;
 	
+	//constructor
 	public GameDisplay () {
 		
-		Timer clock = new Timer(10, this);
+		Timer clock = new Timer(10, this); //clock begins, game begins
 		clock.start();
 		
-		xCoord = 100;
-		yCoord = 625;
+		
 		clickedX = 0;
 		clickedY = 0;
 		
@@ -41,7 +39,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		//gResource = new GoodResource();
 
 		
-		
+		//all resource objects created
 		b1 = new BadResource(25, 700);
 		g1 = new GoodResource(25, 700);
 		b2 = new BadResource(25, 700);
@@ -51,6 +49,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		g4 = new GoodResource(25,700);
 		g5 = new GoodResource(25, 700);
 		
+		//all have their properties shuffled
 		b1.shufflePic();
 		b2.shufflePic();
 		b3.shufflePic();
@@ -60,12 +59,12 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		g4.shufflePic();
 		g5.shufflePic();
 		
-		addMouseListener(this);
+		addMouseListener(this); //adding mouse listener
 		
 		color = (Color.yellow);
 		
 		
-		display = new JTextField("Score:",20);
+		display = new JTextField("Score:",20); //adding box for score
 	    display.setFont(new Font("Monospaced Bold", Font.BOLD, 20));
 	    display.setBackground(Color.WHITE);
 	    display.setEditable(false);
@@ -75,28 +74,16 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 	}
 	
+	//paint component
 	public void paintComponent(Graphics g) {
 		
-
-		setBackground(color);
-		
-		
-
-		setBackground(Color.WHITE);
-
 		super.paintComponent(g);
 		
+		g.drawImage(bgpic, 0, 0, null);//drawing baground pic
+			
+		Graphics2D g2 = (Graphics2D)g; //created 2d graphics
 		
-		
-		g.setColor(Color.white);
-		g.fillRect((int)xCoord, (int)yCoord, 100, 100);
-
-		g.drawImage(bgpic, 0, 0, null);
-		
-		
-		Graphics2D g2 = (Graphics2D)g;
-		
-		drawOnClick(g2, b1);
+		drawOnClick(g2, b1); //checks for ever resource, draws explosion gif or cross if object is clicked or not
 		drawOnClick(g2, b2);
 		drawOnClick(g2, b3);
 		drawOnClick(g2, g1);
@@ -105,6 +92,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		drawOnClick(g2, g4);
 		drawOnClick(g2, g5);
 		
+		//draws every single resource at its own coordinates
 		g2.drawImage(b1.getPic(), (int)b1.giveX(),(int)b1.giveY()-5, this);
 		g2.drawImage(b2.getPic(), (int)b2.giveX(),(int)b2.giveY()-5, this);
 		g2.drawImage(b3.getPic(), (int)b3.giveX(),(int)b3.giveY()-5, this);
@@ -117,6 +105,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		display.setText("SCORE: " + (GoodResource.points - BadResource.points));
 	}
 	
+	//helper method, checks if an object has been clicked, if has , draws its clicked image
 	private void drawOnClick(Graphics2D g, Resources x) {
 		
 		if (time > x.getClickedTime()+25)
@@ -127,9 +116,10 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 	}
 	
+	//everytime an event happens, action performed runs
 	public void actionPerformed(ActionEvent e) {
 
-
+		//every single moving object, runs delayed for every object at their own coordinates. only changes the coordinates/fields of obj
 		if (time>10){
 
 			b1.changeX(b1.giveX()+1);
@@ -180,14 +170,14 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		}
 
 		
-		time++;
+		time++; //increment time 
 		
-		repaint();
+		repaint(); //repaint
 
 		
 	}
 
-	
+//main method, create window	
 	public static void main(String[] args) {
 		JFrame w = new JFrame("Resource Ninja");
 		w.setBounds(250,100,900,650);
@@ -198,17 +188,16 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		w.setVisible(true);
 		w.setResizable(false);
 		
-
-		
-		
 	}
 
+	//mouseListener, when mouse clicked
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		clickedX = e.getX();
+		
+		clickedX = e.getX(); //gets coordinates of where mouse clicked
 		clickedY = e.getY();
 		
-		checkClick(b1);
+		checkClick(b1); //check if any of the objects were clicked, using polymorphism
 		checkClick(b2);
 		checkClick(b3);
 		checkClick(g1 );
@@ -218,8 +207,8 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		checkClick(g5);
 	}
 
-	private void checkClick(Resources x) {
-		
+	
+	private void checkClick(Resources x) {		
 
 		if (	(clickedX >= x.giveX())&&(clickedX <= x.giveX()+100)&&(clickedY >= x.giveY())&&(clickedY <= x.giveY()+100)	)	{
 	
