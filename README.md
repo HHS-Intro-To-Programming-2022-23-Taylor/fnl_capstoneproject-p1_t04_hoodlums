@@ -20,6 +20,12 @@ Feature List:
   - Generate a random vertex
   - Generate a random slope
 - Check if click is within the image
+- Redraw and Reshuffle if resource is clicked
+- Play animation after resource is clicked dependning on which type of resource
+- Update points depending on what resource is clicked
+  - +10 for GoodResource
+  - -30 for BadResource
+  - -10 if you forget to click a GoodResource
 
 
 
