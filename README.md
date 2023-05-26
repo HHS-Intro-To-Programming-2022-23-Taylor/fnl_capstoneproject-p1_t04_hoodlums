@@ -47,7 +47,16 @@ Known Bugs/Workarounds:
 - Workaround: Creating a time variable that counts the ammount of actions that happened and our object that wasan't being instantiated would only be called on when a certain time was reached. Also allows us to call objects at later times so that they get drawn in later.
 - Bug: B1 couldn't be set to the image we wanted.
 - Workaround:We realized this is because the image wasn't initialized as a field and couldn't be set to an image. 
+
 Key Learnings: 
 - Graphhics is unessesarily complicated
 - Always need more methods than you think you do 
 - Don't spend too much time on trying to fix your graphics when you haven't finished your code's main purpose
+
+Credits List: 
+- Adobe background remover
+- Adobe image rescaler
+- Adobe gif background and rescaler
+- Google
+- FCP GUI Draw and Scale
+- Snackbar Lab 
