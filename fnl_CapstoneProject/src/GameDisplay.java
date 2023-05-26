@@ -1,6 +1,6 @@
 /*Authors: Bharath Jayadev, Ojas Khandelwal 
- *Date: 5/16
- *Rev:01
+ *Date: 5/24
+ *Rev:64
  *Notes:
  */
 
@@ -66,7 +66,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		
 		display = new JTextField("Score:",20); //adding box for score
 	    display.setFont(new Font("Monospaced Bold", Font.BOLD, 20));
-	    display.setBackground(Color.WHITE);
+	    display.setBackground(Color.GREEN);
 	    display.setEditable(false);
 	    display.setHorizontalAlignment(JTextField.CENTER);
 		add(display);
@@ -102,7 +102,8 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		g2.drawImage(g4.getPic(), (int)g4.giveX(),(int)g4.giveY()-5, this);
 		g2.drawImage(g5.getPic(), (int)g5.giveX(),(int)g5.giveY()-5, this);
 	    
-		display.setText("SCORE: " + (GoodResource.points - BadResource.points));
+	
+		display.setText("SCORE: " + (GoodResource.points - BadResource.points)); //sets text of display to show points
 	}
 	
 	//helper method, checks if an object has been clicked, if has , draws its clicked image
@@ -197,7 +198,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		clickedX = e.getX(); //gets coordinates of where mouse clicked
 		clickedY = e.getY();
 		
-		checkClick(b1); //check if any of the objects were clicked, using polymorphism
+		checkClick(b1); //check if any of the objects were clicked, using polymorphism to check each object
 		checkClick(b2);
 		checkClick(b3);
 		checkClick(g1 );
@@ -208,18 +209,20 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	}
 
 	
-	private void checkClick(Resources x) {		
+	private void checkClick(Resources x) {		//helper method that checks if location of click is within drawn image
 
 		if (	(clickedX >= x.giveX())&&(clickedX <= x.giveX()+100)&&(clickedY >= x.giveY())&&(clickedY <= x.giveY()+100)	)	{
 	
+		//if true, resetObj method of Resource x is called
 			x.resetObj();
 			
+		//mutator methods of Resource x are called on so x now holds clicked properties
 			x.setClickState(true);
 			x.setClickedTime(time);
 			x.setClickedX((int)clickedX);
 			x.setClickedY((int)clickedY);
 			
-			x.changePoints();
+			x.changePoints(); //Resource x method changePoints called to change the amount of points
 
 		}
 		

@@ -9,15 +9,13 @@ import java.awt.Image;
 import java.awt.Graphics;
 import java.util.Random;
 /*Authors: Bharath Jayadev, Ojas Khandelwal 
- *Date: 5/16
- *Rev:01
+ *Date: 5/24
+ *Rev:64
  *Notes:
  */
+
 public class BadResource extends JPanel implements Resources{
-
-
-		
-	
+			
 	//fields 
 	private double xCoord, yCoord, slope; //properties of the objects movement and location
 	

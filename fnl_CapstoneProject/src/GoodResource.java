@@ -1,3 +1,9 @@
+/*Authors: Bharath Jayadev, Ojas Khandelwal 
+ *Date: 5/24
+ *Rev:64
+ *Notes:
+ */
+
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.FlowLayout;
@@ -5,11 +11,7 @@ import java.awt.Image;
 import java.awt.*; 
 import java.awt.event.*;
 import javax.swing.*;
-/*Authors: Bharath Jayadev, Ojas Khandelwal 
- *Date: 5/16
- *Rev:01
- *Notes:
- */
+
 public class GoodResource extends JFrame implements Resources{
 	
 
@@ -38,7 +40,6 @@ public class GoodResource extends JFrame implements Resources{
 		solar = (new ImageIcon("solar.png")).getImage();
 		wind = (new ImageIcon("wind.png")).getImage();
 		hydro = (new ImageIcon("hydro.png")).getImage();
-
 		wood = (new ImageIcon("wood.png")).getImage();
 		
 		check = (new ImageIcon("explosionNOBG.gif")).getImage();
