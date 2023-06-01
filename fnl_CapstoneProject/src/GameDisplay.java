@@ -27,7 +27,9 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	//constructor
 	public GameDisplay () {
 		
-		Timer clock = new Timer(10, this); //clock begins, game begins
+	//	Timer clock = new Timer(10, this);
+		//clock begins, game begins
+		Timer clock = new Timer(10, this);
 		clock.start();
 		
 		
@@ -35,6 +37,7 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 		clickedY = 0;
 		
 		time = 0;
+		
 		
 		//gResource = new GoodResource();
 
@@ -104,6 +107,9 @@ public class GameDisplay extends JPanel implements ActionListener, MouseListener
 	    
 	
 		display.setText("SCORE: " + (GoodResource.points - BadResource.points)); //sets text of display to show points
+		while (!(time<1000)) {
+			display.setText("GAME OVER, GO DO SOMETHING");
+		}
 	}
 	
 	//helper method, checks if an object has been clicked, if has , draws its clicked image
